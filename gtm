@@ -1,0 +1,43 @@
+var dom_observer = new MutationObserver(function () {console.log("dg");
+  dataLayer.forEach(function(x) {
+    if (x["Label"] == "Limit / Bakiye Yetersiz.") {
+      if (
+          !(vueApp.$children[0].$children[1].$store.getters.customerTypeGet ==
+            "NotRegistered" )&&
+          parseFloat(
+            document
+              .querySelector("#spanShoppingGrandTotal")
+              .innerText.replace(",", ".")
+          ) <= 743 &&
+          !!document.querySelector(".addressContainer") &&
+          document
+            .querySelector(".addressContainer")
+            .closest(".col-md-12")
+            .querySelectorAll(".sectionTitle").length == 1
+        ) {
+          document.querySelectorAll(".addressContainer").forEach(function(t, i){
+            if (!!t.classList.contains("ActiveButton")) {
+              if (
+                vueApp.$children[0].$children[1].$children[1]
+                  .ShippingAddressesModel[i].AddressType == 1
+              ) {
+                console.log("run 444");
+                dataLayer.push({ event: "optimize.active444" });
+                dom_observer.disconnect();
+              }
+            }
+          });
+        }
+    }
+  })
+    if(!document.querySelector(".paymentErrorModalView")){dataLayer.forEach(function(x) {
+      if(x["Label"] == "Limit / Bakiye Yetersiz."){
+        dataLayer = dataLayer.filter(function (x) {
+        return x.Label != 'Limit / Bakiye Yetersiz.';
+      });}
+    })
+                                      }
+});
+var container = document.body;
+var configs = { subtree: true,attributes: true, childList: true, characterData: true };
+dom_observer.observe(container, configs)
