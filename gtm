@@ -4,11 +4,7 @@ var dom_observer = new MutationObserver(function () {
       if (
           !(vueApp.$children[0].$children[1].$store.getters.customerTypeGet ==
             "NotRegistered" )&&
-          parseFloat(
-            document
-              .querySelector("#spanShoppingGrandTotal")
-              .innerText.replace(",", ".")
-          ) <= 743 &&
+          parseFloat(document.querySelector("#spanShoppingGrandTotal").innerHTML.replace(".", "").replace(" TL", "")) <= 742 &&
           !!document.querySelector(".addressContainer") &&
           document
             .querySelector(".addressContainer")
