@@ -1,4 +1,4 @@
-var dom_observer = new MutationObserver(function () {
+var dom_observer = new MutationObserver(function () { console.log("running observer");
   dataLayer.forEach(function(x) {
     if (x["Label"] == "Limit / Bakiye Yetersiz.") {
       if (
