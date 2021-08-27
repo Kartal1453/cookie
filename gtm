@@ -14,8 +14,8 @@ var dom_observer = new MutationObserver(function () { console.log("running obser
           document.querySelectorAll(".addressContainer").forEach(function(t, i){
             if (!!t.classList.contains("ActiveButton")) {
               if (
-                vueApp.$children[0].$children[1].$children[1]
-                  .ShippingAddressesModel[i].AddressType == 1
+                    !( vueApp.$children[0].$children[1].$children[1]
+                  .ShippingAddressesModel[i].AddressType == 2)
               ) {
                 console.log("run 444");
                 dataLayer.push({ event: "optimize.active444" });
