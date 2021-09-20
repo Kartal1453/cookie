@@ -1,0 +1,221 @@
+function pregnant() {
+if (!!document.querySelector(".fbox") && !document.querySelector(".container-pregnant")) {
+        const selectBox = document.querySelector(".fbox");
+    const createNewDiv = document.createElement("div");
+    document.querySelector("head").innerHTML +=`
+    <style>
+    .container-pregnant {
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        height:74px;
+        width:100%;
+        background-color: #E0BBE4;
+    }
+    .url-for-pregnant{
+        text-decoration: none;
+    }
+    .header-pg{
+        margin-left: 40px;
+    }
+    .header-pg-text{
+        color: #000000;
+        font-size: 24px;
+        font-weight: 400;
+        text-align: center;
+        margin: 0 !important;
+    
+    }
+    .break-for-mobile{
+        display:none;
+    }
+    .see-more-btn{
+        display:flex;
+        align-items: center;
+        justify-content:center;
+        width: 181px;
+        height:32px;
+        margin-right: 20px;
+        background-color: #ECD6EF;
+        
+    }
+    .see-more-btn-text{
+        font-size: 14px;
+        color: #000000;
+        font-weight: 400;
+        margin: 0 !important;
+    }
+    .svg-margin-left{
+        margin-left: 5px;
+    }
+    @media (max-width: 880px){
+        .break-for-mobile{
+            display:block;
+        }
+    }
+    @media (max-width: 767px){
+        .container-pregnant {
+            margin-top:14px;
+        }
+    }
+    @media (max-width: 630px){
+       .header-pg-text{
+           font-size:16px;
+       }
+       .see-more-btn{
+        background-color: #E0BBE4;
+       }
+       .see-more-btn-text{
+           display:none;
+       }
+       .see-more-btn{
+           justify-content: flex-end;
+           width:20px
+       }
+    }
+    @media (max-width: 337px){
+       .header-pg-text{
+           font-size:14px;
+       }
+    }
+    </style>
+    `
+    
+    createNewDiv.innerHTML = `
+        <a class="url-for-pregnant" href="https://www.lcwaikiki.com/tr-TR/TR/etiket/hamile-ozel-urunleri">
+            <div class="container-pregnant">
+                <div></div>
+                <div class="header-pg">
+                    <p class="header-pg-text">HAMİLELİKTE VE SONRASINDA <br class="break-for-mobile"> YARDIMCI ÜRÜNLER</p>
+                </div>
+                <div class="see-more-btn">
+                    <p class="see-more-btn-text">
+                        Daha Fazlasını Gör
+                    </p>
+                    <svg class="svg-margin-left" width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.7983 11.2079L7.78136 5.60397L1.7983 0L0 1.68413L4.18644 5.60397L0 9.52381L1.7983 11.2079Z" fill="black"/>
+                        </svg>                
+                </div>
+            </div>
+        </a>
+    `
+    
+    selectBox.insertAdjacentElement("afterend",createNewDiv)
+    }
+   if (!!document.querySelector(".theres-more") && !document.querySelector(".container-pregnant")) {
+        
+                const thereMore = document.querySelector(".theres-more")
+                const createNewDiv = document.createElement("div");
+                createNewDiv.classList.add("main-pregnant");
+     createNewDiv.classList.add("container");
+                document.querySelector("head").innerHTML +=`
+                <style>
+                .container-pregnant {
+                    display: flex;
+                    align-items: center;
+                    justify-content:space-between;
+                    height:74px;
+                    width:100%;
+                    background-color: #E0BBE4;
+                }
+                .url-for-pregnant{
+                    text-decoration: none;
+                }
+                .header-pg{
+                    margin-left: 40px;
+                }
+                .header-pg-text{
+                    color: #000000;
+                    font-size: 24px;
+                    font-weight: 400;
+                    text-align: center;
+                    margin: 0 !important;
+                
+                }
+                .break-for-mobile{
+                    display:none;
+                }
+                .see-more-btn{
+                    display:flex;
+                    align-items: center;
+                    justify-content:center;
+                    width: 181px;
+                    height:32px;
+                    margin-right: 20px;
+                    background-color: #ECD6EF;
+                    
+                }
+                .see-more-btn-text{
+                    font-size: 14px;
+                    color: #000000;
+                    font-weight: 400;
+                    margin: 0 !important;
+                }
+                .svg-margin-left{
+                    margin-left: 5px;
+                }
+                @media (max-width: 880px){
+                    .break-for-mobile{
+                        display:block;
+                    }
+                }
+                @media (max-width: 767px){
+                    .main-pregnant{
+                      padding-right:0px;
+                      padding-left:0px;
+                  }
+                }
+                @media (max-width: 630px){
+                   .header-pg-text{
+                       font-size:16px;
+                   }
+                   .see-more-btn{
+                    background-color: #E0BBE4;
+                   }
+                   .see-more-btn-text{
+                       display:none;
+                   }
+                   .see-more-btn{
+                       justify-content: flex-end;
+                       width:20px
+                   }
+                }
+                @media (max-width: 337px){
+                   .header-pg-text{
+                       font-size:14px;
+                   }
+                }
+                </style>
+                `
+                
+                createNewDiv.innerHTML = `
+                    <a class="url-for-pregnant" href="https://www.lcwaikiki.com/tr-TR/TR/etiket/hamile-ozel-urunleri">
+                        <div class="container-pregnant">
+                            <div></div>
+                            <div class="header-pg">
+                                <p class="header-pg-text">HAMİLELİKTE VE SONRASINDA <br class="break-for-mobile"> YARDIMCI ÜRÜNLER</p>
+                            </div>
+                            <div class="see-more-btn">
+                                <p class="see-more-btn-text">
+                                    Daha Fazlasını Gör
+                                </p>
+                                <svg class="svg-margin-left" width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.7983 11.2079L7.78136 5.60397L1.7983 0L0 1.68413L4.18644 5.60397L0 9.52381L1.7983 11.2079Z" fill="black"/>
+                                    </svg>                
+                            </div>
+                        </div>
+                    </a>
+                `
+                
+                document.querySelector(".responsive-container").insertAdjacentElement("beforebegin",createNewDiv)
+            }
+     
+  
+}
+
+
+    window.addEventListener("DOMContentLoaded", function () {
+       
+            pregnant()
+      
+    })
