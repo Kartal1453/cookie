@@ -1,0 +1,7 @@
+var dom_observer = new MutationObserver(function (mutation) {
+        if(customerType === 5 && !!document.querySelector(".cart-empty")){dataLayer.push({'event': 'optimize.activate419'});}dataLayer.forEach(function(x) {
+    if (x["event"] == "optimize.activate419") {dom_observer.disconnect();}});
+    })
+    var container = document.body;
+    var configs = {subtree: true,attributes: false, childList: true, characterData: false};
+    dom_observer.observe(container, configs);
