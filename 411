@@ -1,0 +1,353 @@
+//// Variant 1 Daha fazlası için
+document.querySelector("head").innerHTML += `<style>
+       @media screen and (max-width: 360px) {
+
+      .urun-miktari {
+        font-size : 14px;}}
+
+         @media screen and (max-width: 330px) {
+
+      .urun-miktari {
+        font-size : 12px;}}
+         @media screen and (max-width: 320px) {
+
+      .urun-miktari {
+        font-size : 10px;}}
+   @media screen and (max-width: 310px) {
+
+      .urun-miktari {
+        font-size : 8px;}}
+
+        <style>`;
+
+function addShopCTA()
+{
+    if (
+        (localStorage.getItem("kategori") && !(document.querySelector(".shop-cta")) && document.querySelector(".fa-trash-o"))
+    )
+    {
+        let firstHeader = document.createElement("span");
+        let secondHeader = document.createElement("span");
+        secondHeader.classList.add("urun-miktari");
+        firstHeader.innerHTML = document.querySelector(".cart-header").querySelector("span").innerHTML.trim().split(/(?=\()/)[0];
+        secondHeader.innerHTML = document.querySelector(".cart-header").querySelector("span").innerHTML.trim().split(/(?=\()/)[1];
+        document.querySelector(".cart-header").innerHTML = "";
+        document.querySelector(".cart-header").appendChild(firstHeader);
+        document.querySelector(".cart-header").appendChild(secondHeader);
+        console.log("fonksyion calisiyor");
+        document
+            .querySelector(".cart-header")
+            .insertAdjacentHTML("afterbegin",
+                `<a class="shop-cta" style="position:absolute;right:0;color:#193db0;font-size:15px;text-decoration:none;margin-right:10px;"  href='${localStorage.getItem("kategori")}'>
+            <i class="fa fa-angle-left angle-parent" style="position: absolute;color: rgb(25, 61, 176);font-size: 32px;top: -6px;" aria-hidden="true"></i>
+            Daha Fazlası İçin</a>`
+            );
+    }
+    document.querySelector(".angle-parent").style.right = `${document.querySelector(".shop-cta").getBoundingClientRect().width}px`;
+    document.querySelector(".angle-parent").style.paddingRight =  "5px";
+    setTimeout(() =>
+    {
+        document.querySelector(".angle-parent").style.right = `${document.querySelector(".shop-cta").getBoundingClientRect().width}px`;
+        document.querySelector(".angle-parent").style.paddingRight =  "5px";
+    }, 200);
+
+
+}
+ready();
+function ready()
+{
+    if (document.readyState == "loading")
+    {
+        document.addEventListener("DOMContentLoaded", addShopCTA);
+    } else
+    {
+        addShopCTA();
+    }
+    window.addEventListener("load", function ()
+    {
+        var dom_observer = new MutationObserver(function (mutation)
+        {
+            if (!document.querySelector(".angle-parent") && !document.querySelector(".cart-empty")) {
+                addShopCTA();
+            }
+
+        });
+        var container = document.body;
+        var configs = { attributes: false, childList: true, characterData: false };
+        dom_observer.observe(container, configs);
+    });
+}
+
+//// Variant 2 Border Alisverise Devam Et
+
+var css = `<style>
+         @media screen and (max-width: 360px) {
+
+        .urun-miktari {
+          font-size : 14px;}}
+
+           @media screen and (max-width: 340px) {
+
+        .urun-miktari {
+          font-size : 12px;}}
+           @media screen and (max-width: 320px) {
+
+        .urun-miktari {
+          font-size : 10px;}}
+    @media screen and (max-width: 310px) {
+
+        .urun-miktari {
+          font-size : 8px;}}
+
+          <style>`;
+
+
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+
+function addShopCTA() {
+  if (
+    localStorage.getItem("kategori") &&
+    !document.querySelector(".shop-cta") &&
+    document.querySelector(".fa-trash-o")
+  ) {
+    let firstHeader = document.createElement("span");
+    let secondHeader = document.createElement("span");
+    secondHeader.classList.add("urun-miktari");
+    firstHeader.innerHTML = document
+      .querySelector(".cart-header")
+      .querySelector("span")
+      .innerHTML.trim()
+      .split(/(?=\()/)[0];
+    secondHeader.innerHTML = document
+      .querySelector(".cart-header")
+      .querySelector("span")
+      .innerHTML.trim()
+      .split(/(?=\()/)[1];
+    document.querySelector(".cart-header").innerHTML = "";
+    document.querySelector(".cart-header").appendChild(firstHeader);
+    document.querySelector(".cart-header").appendChild(secondHeader);
+    document
+      .querySelector(".cart-header")
+      .insertAdjacentHTML(
+        "afterbegin",
+        '<a class="shop-cta" style="  position: absolute;right: 0;color: #193db0;font-size: 15px;display: flex;justify-content: center;border-radius: 2px;background-color: #FFFFFF !important;text-align: center;color: #193DB0 !important;font-weight: bold !important;padding-left: 10px;padding-right: 10px;padding-top: 2px;padding-bottom: 2px;line-height: 24px !important;vertical-align: middle;border: 1px solid #193DB0;text-decoration: none;margin-right: 10px;"  href=' +
+          localStorage.getItem("kategori") +
+          '>Alışverişe Devam Et</a>'
+      );
+  }
+}
+ready();
+function ready() {
+  if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded", addShopCTA);
+
+  } else {
+    addShopCTA();
+  }
+}
+
+window.addEventListener("load", function ()
+    {
+        var dom_observer = new MutationObserver(function (mutation)
+        {
+            if (!document.querySelector(".shop-cta") && !document.querySelector(".cart-empty")) {
+                addShopCTA();
+            }
+
+        });
+        var container = document.body;
+        var configs = { attributes: false, childList: true, characterData: false };
+        dom_observer.observe(container, configs);
+});
+
+///////// Variant 3 411 Orijinal Alisverise devam et
+
+document.querySelector("head").innerHTML += `<style>
+.cart-header {
+display: flex;
+    align-items: center;
+}
+     @media screen and (max-width: 360px) {
+
+    .urun-miktari {
+      font-size : 14px;}}
+ @media screen and (max-width: 318px) {
+.shop-cta {
+font-size: 14px !important;}
+ .fa-angle-left {
+font-size:24px !important; top:-3px !important; right:139px !important;
+}}
+       @media screen and (max-width: 330px) {
+
+    .urun-miktari {
+      font-size : 12px;}}
+       @media screen and (max-width: 310px) {
+
+    .urun-miktari {
+      font-size : 10px;}}
+
+      <style>`
+
+function addShopCTA() {
+    if (
+      (localStorage.getItem("kategori") && !(document.querySelector(".shop-cta")) && document.querySelector(".fa-trash-o"))
+    ) {
+      let firstHeader = document.createElement("span")
+      let secondHeader = document.createElement("span")
+      secondHeader.classList.add("urun-miktari")
+      firstHeader.innerHTML = document.querySelector(".cart-header").querySelector("span").innerHTML.trim().split(/(?=\()/)[0]
+      secondHeader.innerHTML = "&nbsp;" + document.querySelector(".cart-header").querySelector("span").innerHTML.trim().split(/(?=\()/)[1]
+      document.querySelector(".cart-header").innerHTML = ""
+      document.querySelector(".cart-header").appendChild(firstHeader)
+      document.querySelector(".cart-header").appendChild(secondHeader)
+      console.log("fonksyion calisiyor");
+      document
+        .querySelector(".cart-header")
+        .insertAdjacentHTML("afterbegin",
+            '<a class="shop-cta" style="position:absolute;right:0;color:#193db0;font-size:15px;text-decoration:none;margin-right:10px;width: 160px; text-align: end;"  href=' +
+              localStorage.getItem("kategori") +
+              '><i class="fa fa-angle-left" aria-hidden="true" style="position:absolute;right:154px;color:#193db0;font-size:32px;top:-6px;"></i>Alışverişe Devam Et</a>'
+          );
+    }
+
+
+  }
+  ready();
+  function ready() {
+    if (document.readyState == "loading") {
+        document.addEventListener("DOMContentLoaded", addShopCTA)
+    } else {
+
+        addShopCTA()
+    }
+
+  }
+  window.addEventListener("load", function () {
+    var dom_observer = new MutationObserver(function (mutation) {
+        addShopCTA()
+    })
+    var container = document.body
+    var configs = {attributes: false, childList: true, characterData: false}
+    dom_observer.observe(container, configs)
+})
+
+//////// Variant 4 Dinamik
+
+var css = `<style>
+         @media screen and (max-width: 360px) {
+
+        .urun-miktari {
+          font-size : 14px;}}
+
+           @media screen and (max-width: 340px) {
+
+        .urun-miktari {
+          font-size : 12px;}}
+           @media screen and (max-width: 320px) {
+
+        .urun-miktari {
+          font-size : 10px;}}
+    @media screen and (max-width: 310px) {
+
+        .urun-miktari {
+          font-size : 8px;}}
+
+          <style>`;
+
+
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+function addShopCTA()
+{
+    if (
+        localStorage.getItem("kategori") &&
+        !document.querySelector(".shop-cta") &&
+        document.querySelector(".fa-trash-o")
+    )
+    {
+        var firstHeader = document.createElement("span");
+        var secondHeader = document.createElement("span");
+        secondHeader.classList.add("urun-miktari");
+        firstHeader.innerHTML = document
+            .querySelector(".cart-header")
+            .querySelector("span")
+            .innerHTML.trim()
+            .split(/(?=\()/)[0];
+        secondHeader.innerHTML = document
+            .querySelector(".cart-header")
+            .querySelector("span")
+            .innerHTML.trim()
+            .split(/(?=\()/)[1];
+        document.querySelector(".cart-header").innerHTML = "";
+        document.querySelector(".cart-header").appendChild(firstHeader);
+        document.querySelector(".cart-header").appendChild(secondHeader);
+        var donText = "Alışverişe Devam Et";
+        if (
+            localStorage.getItem("kategori").includes("home") ||
+            localStorage.getItem("kategori").includes("outlet") ||
+            localStorage.getItem("kategori").includes("etiket")
+        )
+        {
+            donText = "Daha Fazla Ürün";
+        } else
+        {
+            if (window.innerWidth < 550)
+            {
+                donText = `Daha Fazla Ürün`;
+            } else
+            {
+                if (localStorage.getItem("411-cat"))
+                {
+                    var secondWord = localStorage.getItem("411-cat").split("-")[0];
+                    if (secondWord == "Eşofman Alt")
+                    {
+                        secondWord = "Eşofman Altı";
+                    }
+                    donText = `Daha Fazla ${secondWord}`;
+                }
+            }
+
+        }
+    }
+    document
+        .querySelector(".cart-header")
+        .insertAdjacentHTML(
+            "afterbegin",
+            `
+            <a class="shop-cta" style="position:absolute;right:0;color:#193db0;font-size:15px;text-decoration:none;margin-right:10px;"  href='${localStorage.getItem("kategori")}'>
+            <i class="fa fa-angle-left angle-parent" style="position: absolute;color: rgb(25, 61, 176);font-size: 32px;top: -6px;" aria-hidden="true"></i>
+            ${donText}</a>`
+        );
+    document.querySelector(".angle-parent").style.right = `${document.querySelector(".shop-cta").getBoundingClientRect().width}px`;
+    document.querySelector(".angle-parent").style.paddingRight =  "5px";
+    setTimeout(() =>
+    {
+        document.querySelector(".angle-parent").style.right = `${document.querySelector(".shop-cta").getBoundingClientRect().width}px`;
+        document.querySelector(".angle-parent").style.paddingRight =  "5px";
+    }, 200);
+
+}
+
+if (document.readyState == "loading")
+{
+    document.addEventListener("DOMContentLoaded", addShopCTA);
+} else
+{
+    addShopCTA();
+}
+window.addEventListener("load", function ()
+    {
+        var dom_observer = new MutationObserver(function (mutation)
+        {
+            if (!document.querySelector(".angle-parent") && !document.querySelector(".cart-empty")) {
+                addShopCTA();
+            }
+
+        });
+        var container = document.body;
+        var configs = { attributes: false, childList: true, characterData: false };
+        dom_observer.observe(container, configs);
+});
