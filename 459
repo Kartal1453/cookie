@@ -1,0 +1,140 @@
+function doubleListingAmount()
+{
+    if (!document.querySelector(".paging-process > span > .blue"))
+    {
+        return;
+    }
+    if (
+        parseInt(document.querySelector(".paging-process > span > .blue").innerHTML) /
+        parseInt(document.querySelector(".paging-process > span > b").innerHTML) ==
+        1
+    )
+    {
+        return;
+    }
+
+    if ([...document.querySelectorAll(".product-item-wrapper")].length % 96 == 0)
+    {
+        return;
+    }
+
+    var pageCount = Math.ceil(parseInt(document.querySelector(".paging-process > span > b").innerHTML) / 96);
+    document.querySelector("#pageIndex").nextSibling.remove();
+    document.querySelector("#pageIndex").insertAdjacentHTML("afterend", `/${pageCount})`);
+    var loadMoreButton = document.querySelector(".paging-process > a");
+    var pageIndex = parseInt(window.location.href.split("dex=")[1]);
+    setTimeout(function ()
+    {
+        if ([...document.querySelectorAll(".product-item-wrapper")].length % 96 != 0)
+        {
+            document.querySelector(".paging-process > a").addEventListener("click", (e) =>
+            {
+                e.preventDefault;
+            });
+            var x = `${document.querySelector(".lazy-load-button").getAttribute("onclick").split("event.prevent")[0]}`;
+            new Function(x)();
+
+            if (pageIndex)
+            {
+                if (pageIndex % 2 != 0)
+                {
+                    pageIndex++;
+
+                    if (window.location.href.includes("column"))
+                    {
+                        window.history.pushState(
+                            "",
+                            "",
+                            `/tr-TR/TR/kategori/kadin/Sweatshirt?Layout=three-column&PageIndex=${pageIndex}`
+                        );
+                    } else
+                    {
+                        window.history.pushState("", "", `/tr-TR/TR/kategori/kadin/Sweatshirt?PageIndex=${pageIndex}`);
+                    }
+                }
+
+                document.querySelector("#pageIndex").innerHTML = `${pageIndex / 2}`;
+                document.querySelector(".paging-process > span > .blue").innerHTML = `${parseInt(document.querySelector("#pageIndex").innerHTML) * 96
+                    }`;
+            } else
+            {
+                document.querySelector("#pageIndex").innerHTML = `${parseInt(document.querySelector(".paging-process > span > .blue").innerHTML) / 96
+                    }`;
+            }
+        } else if (parseInt(document.querySelector(".paging-process > span > .blue").innerHTML) % 96 != 0)
+        {
+            if (window.location.href.includes("column"))
+            {
+                window.history.pushState(
+                    "",
+                    "",
+                    `/tr-TR/TR/kategori/kadin/Sweatshirt?Layout=three-column&PageIndex=${pageIndex}`
+                );
+            } else
+            {
+                window.history.pushState("", "", `/tr-TR/TR/kategori/kadin/Sweatshirt?PageIndex=${pageIndex}`);
+            }
+
+            document.querySelector("#pageIndex").innerHTML = `${Math.round(pageIndex / 2)}`;
+            document.querySelector(".paging-process > span > .blue").innerHTML = `${parseInt(document.querySelector("#pageIndex").innerHTML) * 96
+                }`;
+        }
+
+        if (pageIndex % 2 != 0 && pageIndex == parseInt(document.querySelector("#pageIndex").innerHTML))
+        {
+            pageIndex++;
+            if (window.location.href.includes("column"))
+            {
+                window.history.pushState(
+                    "",
+                    "",
+                    `/tr-TR/TR/kategori/kadin/Sweatshirt?Layout=three-column&PageIndex=${pageIndex}`
+                );
+            } else
+            {
+                window.history.pushState("", "", `/tr-TR/TR/kategori/kadin/Sweatshirt?PageIndex=${pageIndex}`);
+            }
+
+            document.querySelector("#pageIndex").innerHTML = `${Math.round(pageIndex / 2)}`;
+        }
+    }, 1300);
+}
+
+if (document.readyState == "loading")
+{
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+        doubleListingAmount();
+    });
+} else
+{
+    doubleListingAmount();
+    document.querySelector(".paging-process > a").addEventListener("click", (e) =>
+    {
+        e.preventDefault;
+    });
+}
+
+window.addEventListener("load", function ()
+{
+    document.querySelector(".paging-process > a").addEventListener("click", (e) =>
+    {
+        e.preventDefault;
+    });
+    setTimeout(function ()
+    {
+        dom_observer.observe(container, configs);
+    }, 2000);
+
+    function observerCallback(mutation)
+    {
+        doubleListingAmount();
+    }
+    var dom_observer = new MutationObserver(observerCallback);
+    var container = document.body;
+    var configs = {
+        attributes: false,
+        childList: true,
+        characterData: false,
+    };
+});
