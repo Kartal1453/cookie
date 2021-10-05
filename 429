@@ -93,7 +93,7 @@ document.querySelector(".header-fix").style.height = "160px";
     };
   
   ////// For mobile 
-    if(!!document.querySelector("#header__container").querySelector(".mh-container")&& !document.querySelector(".div-header-container") && !document.querySelector(".header") && !window.pageYOffset){
+    if(!!document.querySelector("#header__container").querySelector(".mh-container")&& !document.querySelector(".div-header-container") && !document.querySelector(".header")){
         var beforeHeader = document.querySelector(".mh-container");
         var createHeaderDiv = document.createElement("div");
         createHeaderDiv.classList.add("div-header-container");
