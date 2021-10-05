@@ -1,0 +1,180 @@
+var css = `
+.opat{
+  opacity: 0;
+  }
+  .change-color{
+      top: 16px !important;
+  }
+  .change-color::after{
+    background-color:#FFFFFF !important;
+    width: 18% !important;
+    height: 15% !important;
+    top: 14px !important;
+    border-radius: 5px !important;
+  
+  }
+  .change-color::before{
+    background-color:#FFFFFF !important;
+    top:21px !important;
+    width: 18% !important;
+    height: 15% !important;
+    border-radius: 5px !important;
+  }
+  .change-colorland::after{
+    background-color:#0038ae !important;
+    width: 18%;
+    height: 15%;
+    top: 14px;
+    border-radius: 5px;
+  
+  }
+  .change-colorland::before{
+    background-color:#0038ae !important;
+    top:21px !important;
+    width: 18%;
+    height: 15%;
+    border-radius: 5px;
+  }
+  .display-not{
+  opacity: 0;
+  }
+`;
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+
+function menuDesing() {
+function MainPageclickFunction() {
+setTimeout(function(){
+if(!!document.querySelector(".zone-menu-item") && !document.querySelector(".change-color")) {
+ var menu = document.querySelector("#header__container").querySelector("ul");
+ menu.parentElement.style.marginBottom = "54px";
+  var menuItems = menu.querySelectorAll("li");
+  var bgColors = [
+"background-color:#E3C761;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/8fb893e884f704dd6e2c4b3eaf91e6ab.png); background-repeat: no-repeat; background-size: 260.72px 89px; background-position: right -15px top 3%;",
+"background-color:#7B91C8;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/261fca56d897c5351a429cbc63ea778f.png); background-repeat: no-repeat; background-size: 135px 85px; background-position: right 4px top;",
+"background-color:#C1DBEA;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/84d937b2117c0ce9b4cbe6b37edb5f34.png); background-repeat: no-repeat; background-size: 191px 100px; background-position: right -15px top -10px;",
+"background-color:#82C3D8;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/1b8298b67f10c0f2b2e561ae41c6efd8.png); background-repeat: no-repeat; background-size: 163px 164px; background-position: right 5px top 3%;",
+"background-color:red;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/5f6d2069b741a57ce03f11ce50167e8a.png); background-repeat: no-repeat; background-size: cover; background-position: right 0px top 0%;",
+"background-color:#F3D494;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/green.jpg);background-size:100% 100%;",
+"background-color:#7B81B8;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/brand.png); background-repeat: no-repeat; background-size: 217px 86.9px; background-position: right 0px top 1%;","background-image:url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/waikikiland_2.jpeg);background-repeat: no-repeat; background-size: 106% 100%; background-position: center;padding:0px!important;",
+"background-image:url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/outlet_70.png);background-size: 100% 100%;color:#FFFFFF!important;",
+];
+let int = 0;
+menu.style.cssText = "margin-top: 112px !important; padding: 0 15px;"; 
+document.querySelector(".mm-footer").querySelector(".mm-footer__title").style.display = "none";
+document.querySelector(".mm-footer").querySelector(".mm-footer__buttons").style.display = "none";
+document.querySelector("#header__container").querySelector("ul").querySelectorAll("li")[7].querySelector("a").classList.add("display-not");
+document.querySelector("#header__container").querySelector("ul").querySelectorAll("li")[7].querySelector(".zone-menu-right-arrow").classList.add("change-colorland");
+
+menuItems.forEach((t) => {
+t.style.cssText = `${bgColors[int]}height: 75px;border:none;justify-content: space-between;color: rgb(255, 255, 255); border-radius: 5px; margin-top: 12px; display: flex; align-items: center; padding: 0px 10px 0px 10px !important;font-size: 20px;font-weight: bold;overflow: hidden;`;
+
+if(t.querySelector(".subzone-menu-title ")){
+t.querySelector(".subzone-menu-title ").style.cssText ="font-size: 20px;font-weight: bold;color: rgb(255, 255, 255) !important;";
+   t.querySelector(".subzone-menu-title ").innerText=t.querySelector(".subzone-menu-title ").innerText.toUpperCase();
+}
+
+if( t.querySelector(".zone-menu-item-anchor")){
+t.querySelector(".zone-menu-item-anchor").style.cssText ="font-size: 20px;font-weight: bold;color: rgb(255, 255, 255) !important;";
+    t.querySelector(".zone-menu-item-anchor").innerText = t.querySelector(".zone-menu-item-anchor").innerText.toUpperCase();
+}
+
+if(t.querySelector(".zone-menu-right-arrow")){t.querySelector(".zone-menu-right-arrow").classList.add("change-color");}
+if (t.querySelector("a")) {
+  t.querySelector("a").style.cssText =
+    "height: 75px;width:100%; display: flex; align-items: center;color:#FFFFFF !important;font-size:20px !important; font-weight:bold !important;";
+  t.querySelector("a").innerText = t
+    .querySelector("a")
+    .innerText.toUpperCase();
+}
+if(t.firstChild.data){t.firstChild.data = t.firstChild.data.toUpperCase();
+if (t.firstChild.data.slice("-3") == "AŞ)")
+t.firstChild.data = t.firstChild.data.slice(0, -3) + "aş)";}
+if(t.querySelector(".zone-menu-right-arrow"))t.querySelector(".zone-menu-right-arrow").insertAdjacentHTML(
+  "beforebegin",
+  `
+  
+    
+`
+);
+int++;
+});document.querySelector(".outlet").innerHTML = `<span style="font-size: 16px;font-weight: 300;"><span style ="font-size: 20px; font-weight: bold;">OUTLET</span> <br><span class="select-span">%70'E VARAN İNDİRİMLER</span></span> \n \n<span class=\"menu-right-arrow change-color\"></span>`
+}}, 0.10);
+}
+if(!!document.querySelector(".mm-header"))document.querySelector(".mm-header").querySelector(".back-button").addEventListener('click', MainPageclickFunction);
+if(!!document.querySelector(".mega-menu_hamburger-button"))document.querySelector(".mega-menu_hamburger-button").addEventListener('click', MainPageclickFunction);
+if(!!document.querySelector(".sb-header__back-button"))document.querySelector(".sb-header__back-button").addEventListener('click', MainPageclickFunction);
+function clickFunction() {
+    setTimeout(function(){
+  if(!document.querySelector(".topButtons").classList.contains("hidden") &&  !document.querySelector(".change-color") && !!document.querySelector(".menuDetail").classList.contains("active")) {
+     var menu = document.querySelector(".mobileMenu").querySelector(".menu");
+  var menuItems = menu.querySelector("ul").querySelectorAll("li");
+     document.querySelector(".lcwland").querySelector(".menu-right-arrow").classList.add("change-colorland");
+      document.querySelector(".lcwland").querySelector("a").classList.add("opat");
+      document.querySelector(".lcwland").querySelector("a").innerText = "WAIKIKILAND";
+      document.querySelector(".mobile-menu-contact-container").querySelector(".container-fluid").style.display ="none"
+      var bgColors = [
+    "background-color:#E3C761;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/8fb893e884f704dd6e2c4b3eaf91e6ab.png); background-repeat: no-repeat; background-size: 260.72px 89px; background-position: right -15px top 3%;",
+    "background-color:#7B91C8;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/261fca56d897c5351a429cbc63ea778f.png); background-repeat: no-repeat; background-size: 135px 85px; background-position: right 4px top;",
+    "background-color:#C1DBEA;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/84d937b2117c0ce9b4cbe6b37edb5f34.png); background-repeat: no-repeat; background-size: 191px 100px; background-position: right -15px top -10px;",
+    "background-color:#82C3D8;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/1b8298b67f10c0f2b2e561ae41c6efd8.png); background-repeat: no-repeat; background-size: 163px 164px; background-position: right 5px top 3%;",
+    "background-color:red;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/5f6d2069b741a57ce03f11ce50167e8a.png); background-repeat: no-repeat; background-size: cover; background-position: right 0px top 0%;",
+    "background-color:#F3D494;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/green.jpg);background-size:100% 100%;",
+    "background-color:#7B81B8;background-image: url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/brand.png); background-repeat: no-repeat; background-size: 217px 86.9px; background-position: right 0px top 1%;","background-image:url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/waikikiland_2.jpeg);background-repeat: no-repeat; background-size: 106% 100%; background-position: center;padding:0px!important;",
+    "background-image:url(https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/outlet_70.png);background-size: 100% 100%;color:#FFFFFF!important;",
+  ];
+  let int = 0;
+  menu.style.cssText = "margin-top:112px;padding-bottom: 58px;"; 
+  
+  menuItems.forEach((t) => {
+    t.style.cssText = `${bgColors[int]}height: 75px;border:none;justify-content: space-between;color: rgb(255, 255, 255); border-radius: 5px; margin-top: 12px; display: flex; align-items: center; padding: 0px 10px 0px 10px !important;font-size: 20px;font-weight: bold;overflow: hidden;`;
+    
+  if(t.querySelector(".menu-right-arrow")){t.querySelector(".menu-right-arrow").classList.add("change-color");}
+    if (t.querySelector("a")) {
+      t.querySelector("a").style.cssText =
+        "height: 75px; max-width: 780px; display: flex !important; align-items: center;color:#FFFFFF !important;font-size:20px !important; font-weight:bold !important;";
+      t.querySelector("a").innerText = t
+        .querySelector("a")
+        .innerText.toUpperCase();
+    }
+  if(t.firstChild.data){t.firstChild.data = t.firstChild.data.toUpperCase();
+    if (t.firstChild.data.slice("-3") == "AŞ)")
+  t.firstChild.data = t.firstChild.data.slice(0, -3) + "aş)";}
+    if(t.querySelector(".menu-right-arrow"))t.querySelector(".menu-right-arrow").insertAdjacentHTML(
+      "beforebegin",
+      `
+      
+        
+  `
+    );
+    int++;
+  });document.querySelector(".nav-outlet").innerHTML = `<span style="font-size: 16px;font-weight: 300;"><span style ="font-size: 20px; font-weight: bold;">OUTLET</span> <br><span class="select-span">%70'E VARAN İNDİRİMLER</span></span> \n \n<span class=\"menu-right-arrow change-color\"></span>`
+    }}, 0.10);
+  }
+  if(!!document.querySelector(".mobileMenu"))document.querySelector(".mobileMenu").querySelector(".back").addEventListener('click', clickFunction);
+  if(!!document.querySelector(".hamburger-menu"))document.querySelector(".hamburger-menu").addEventListener('click', clickFunction);
+  
+  if(!!document.querySelector(".nav-outlet"))document.querySelector(".nav-outlet").addEventListener("click", function() { setTimeout(function(){ document.querySelector(".head").querySelector(".title").innerHTML ="OUTLET " }, 0.1);
+  });
+
+
+}
+   ready();
+   function ready() {
+     if (document.readyState == "loading") {
+         
+         document.addEventListener("DOMContentLoaded", menuDesing)
+     } else {
+         
+         menuDesing()
+     }
+     window.addEventListener("load", function () {
+         var dom_observer = new MutationObserver(function (mutation) {
+          menuDesing()
+         })
+         var container = document.body
+         var configs = {attributes: false, childList: true, characterData: false}
+         dom_observer.observe(container, configs)
+     })
+   } 
