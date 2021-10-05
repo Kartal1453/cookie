@@ -46,7 +46,7 @@ document.head.appendChild(style);
 function menuDesing() {
 function MainPageclickFunction() {
 setTimeout(function(){
-if(!!document.querySelector(".zone-menu-item") && !document.querySelector(".change-color")) {
+if(!!document.querySelector(".zone-menu-item") && !document.querySelector(".change-color") && !!document.querySelector(".mm-footer")) {
  var menu = document.querySelector("#header__container").querySelector("ul");
  menu.parentElement.style.marginBottom = "54px";
   var menuItems = menu.querySelectorAll("li");
@@ -88,9 +88,6 @@ if (t.querySelector("a")) {
     .querySelector("a")
     .innerText.toUpperCase();
 }
-if(t.firstChild.data){t.firstChild.data = t.firstChild.data.toUpperCase();
-if (t.firstChild.data.slice("-3") == "AŞ)")
-t.firstChild.data = t.firstChild.data.slice(0, -3) + "aş)";}
 if(t.querySelector(".zone-menu-right-arrow"))t.querySelector(".zone-menu-right-arrow").insertAdjacentHTML(
   "beforebegin",
   `
