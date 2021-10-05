@@ -11,6 +11,7 @@ display: flex;
 align-items: center; 
 justify-content: center;
 }
+ .remove-fast-way{max-height: 0px;}
      .header-text-bold-span{
      font-size: 14px;
      font-weight: 600;
@@ -115,6 +116,9 @@ document.querySelector(".header-fix").style.height = "160px";
             } else {
               if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.add("remove-display")
             }
+            if(window.pageYOffset > 50){if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.add("remove-fast-way")}else {
+    if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.remove("remove-fast-way")
+  }
             prevScrollpos = currentScrollPos;
           }
         function changeText() {
