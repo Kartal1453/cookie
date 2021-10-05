@@ -1,0 +1,150 @@
+  var css = `
+     @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+.div-header-container{
+transition: height 1s;overflow: 
+hidden;margin-left: -10px; 
+margin-right: -10px;
+text-align: center;
+border-bottom: 1px solid #d7d7d8;
+height: 25px; 
+display: flex; 
+align-items: center; 
+justify-content: center;
+}
+     .header-text-bold-span{
+     font-size: 14px;
+     font-weight: 600;
+     color: #000000;
+     line-height: 10px;
+     font-family: 'Raleway', sans-serif;
+     }
+     .remove-display{
+     height:0px !important;
+     }
+     .header-text-remove-mobile{
+     font-size: 14px;
+     font-weight: 500;
+     line-height: 10px;
+     color:#000000;
+     font-family: 'Raleway', sans-serif;
+     }
+     .header-text{
+     margin: 0px !important;
+     font-size: 10px !important;
+     line-height: 10px !important;
+     }
+     @media (max-width: 968px){
+     .header-text-bold-span{
+     font-size: 15px !important;
+     }
+     }
+     @media (max-width: 820px){
+     .header-text-remove-mobile,.remove-mobile-bold{
+     display:none
+     }
+     }
+     @media (max-width: 319px){
+     .header-text-bold-span{
+     font-size: 12px !important;
+     }
+     }
+`;
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+
+function anasayfa() {
+  /// For desktop
+ if(!!document.querySelector(".header") && !document.querySelector(".div-header-container") && document.querySelector(".sf-arrows")){
+var beforeHeader = document.querySelector(".header");
+var createHeaderDiv = document.createElement("div");
+beforeHeader.insertAdjacentElement("afterbegin", createHeaderDiv);
+createHeaderDiv.classList.add("div-header-container");
+  var arrayText = [`<p class="header-text"><span class="header-text-bold-span">250 TL ve Üzeri Alışverişlerde Kargo Bedava</span></p>`,`<p class="header-text"><span class="header-text-bold-span">120 Gün Ücretsiz İade Hakkı<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">79 İlde 500'den Fazla Mağazadan Anında İade & Değişim</span> </p>`,
+      `<p class="header-text"><span class="header-text-bold-span">Kapıda Nakit Ödeme Seçeneği<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Farklı Ödeme Seçenekleri ile Ödeme Kolaylığı</span> </p>`,
+      `<p class="header-text"><span class="header-text-bold-span">LC Waikiki Kalite ve Güvencesi<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">100 Bine Varan Ürün Üzerinde 275 Farklı Kalite ve Güvenlik Testi</span> </p>`,
+      `<p class="header-text"><span class="header-text-bold-span">İlk Siparişe Kargo Bedava<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Üye Olarak Verilen İlk Siparişte Ücretsiz Kargo</span> </p>`,
+      `<p class="header-text"><span class="header-text-bold-span">Mağazadan Hemen Gelsin<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Online Alışverişlerde 24 Saat İçinde Adrese Teslim</span> </p>`,
+      `<p class="header-text"><span class="header-text-bold-span">Hemen Gel Al<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Kargo Beklemeden Aynı Gün İçinde Mağazadan Teslim Al</span> </p>`
+    ];
+  let point = 0;
+    createHeaderDiv.innerHTML = `${arrayText[point]}`;  
+   var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+    if (!window.pageYOffset) {
+     document.querySelector(".div-header-container").classList.remove("remove-display")
+    } else {
+     document.querySelector(".div-header-container").classList.add("remove-display")
+    }
+    prevScrollpos = currentScrollPos;
+  }
+function changeText() {
+  createHeaderDiv.innerHTML = `${arrayText[point]}`;
+    if (point < arrayText.length - 1) {
+      point++;
+    } else {
+      point = 0;
+    }
+  }
+setInterval(changeText, 5000); 
+changeText();
+document.querySelector(".header-fix").style.height = "160px";
+    };
+  
+  ////// For mobile 
+    if(!!document.querySelector("#header__container").querySelector(".mh-container")&& !document.querySelector(".div-header-container") && !document.querySelector(".header") && !window.pageYOffset){
+        var beforeHeader = document.querySelector(".mh-container");
+        var createHeaderDiv = document.createElement("div");
+        createHeaderDiv.classList.add("div-header-container");
+      beforeHeader.insertAdjacentElement("afterbegin", createHeaderDiv);
+          var arrayText = [`<p class="header-text"><span class="header-text-bold-span">250 TL ve Üzeri Alışverişlerde Kargo Bedava</span></p>`,`<p class="header-text"><span class="header-text-bold-span">120 Gün Ücretsiz İade Hakkı<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">79 İlde 500'den Fazla Mağazadan Anında İade & Değişim</span> </p>`,
+              `<p class="header-text"><span class="header-text-bold-span">Kapıda Nakit Ödeme Seçeneği<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Farklı Ödeme Seçenekleri ile Ödeme Kolaylığı</span> </p>`,
+              `<p class="header-text"><span class="header-text-bold-span">LC Waikiki Kalite ve Güvencesi<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">100 Bine Varan Ürün Üzerinde 275 Farklı Kalite ve Güvenlik Testi</span> </p>`,
+              `<p class="header-text"><span class="header-text-bold-span">İlk Siparişe Kargo Bedava<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Üye Olarak Verilen İlk Siparişte Ücretsiz Kargo</span> </p>`,
+              `<p class="header-text"><span class="header-text-bold-span">Mağazadan Hemen Gelsin<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Online Alışverişlerde 24 Saat İçinde Adrese Teslim</span> </p>`,
+              `<p class="header-text"><span class="header-text-bold-span">Hemen Gel Al<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Kargo Beklemeden Aynı Gün İçinde Mağazadan Teslim Al</span> </p>`
+            ];
+          let point = 0;
+            createHeaderDiv.innerHTML = `${arrayText[point]}`;
+          var prevScrollpos = window.pageYOffset;
+          window.onscroll = function() {
+          var currentScrollPos = window.pageYOffset;
+            if (!window.pageYOffset) {
+              if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.remove("remove-display")
+            } else {
+              if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.add("remove-display")
+            }
+            prevScrollpos = currentScrollPos;
+          }
+        function changeText() {
+          createHeaderDiv.innerHTML = `${arrayText[point]}`;
+            if (point < arrayText.length - 1) {
+              point++;
+            } else {
+              point = 0;
+            }
+          }
+        setInterval(changeText, 5000); 
+        changeText();
+            }
+  }
+  
+     ready();
+  function ready() {
+    if (document.readyState == "loading") {
+      // still loading, wait for the event
+      document.addEventListener("DOMContentLoaded", anasayfa);
+    } else {
+      // DOM is ready!
+      anasayfa();
+    }
+    window.addEventListener("load", function () {
+      var dom_observer = new MutationObserver(function (mutation) {
+        anasayfa();
+      });
+      var container = document.body;
+      var configs = {subtree: true,attributes: false, childList: true, characterData: false };
+      dom_observer.observe(container, configs);
+    });
+  }
