@@ -106,6 +106,7 @@ document.querySelector(".header-fix").style.height = "160px";
               `<p class="header-text"><span class="header-text-bold-span">Mağazadan Hemen Gelsin<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Online Alışverişlerde 24 Saat İçinde Adrese Teslim</span> </p>`,
               `<p class="header-text"><span class="header-text-bold-span">Hemen Gel Al<span class="header-text-bold-span remove-mobile-bold"> - </span></span><span class="header-text-remove-mobile">Kargo Beklemeden Aynı Gün İçinde Mağazadan Teslim Al</span> </p>`
             ];
+      if(window.pageYOffset > 80){if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.add("remove-fast-way")}
           let point = 0;
             createHeaderDiv.innerHTML = `${arrayText[point]}`;
           var prevScrollpos = window.pageYOffset;
@@ -116,7 +117,7 @@ document.querySelector(".header-fix").style.height = "160px";
             } else {
               if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.add("remove-display")
             }
-            if(window.pageYOffset > 50){if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.add("remove-fast-way")}else {
+            if(window.pageYOffset > 60){if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.add("remove-fast-way")}else {
     if(document.querySelector(".div-header-container"))document.querySelector(".div-header-container").classList.remove("remove-fast-way")
   }
             prevScrollpos = currentScrollPos;
