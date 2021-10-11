@@ -1,0 +1,27 @@
+var dom_observer = new MutationObserver(function () {
+    document.querySelector(".uyelik-buton") &&
+      document
+        .querySelector(".uyelik-buton")
+        .addEventListener("click", uyeOlClick);
+    document.querySelector(".redirect") &&
+      document.querySelector(".redirect").addEventListener("click", logInClick);
+  }),
+  container = document.body,
+  configs = { subtree: !0, attributes: !1, childList: !0, characterData: !1 };
+dom_observer.observe(container, configs);
+function logInClick() {
+  dataLayer.push({
+    Category: "EmptyCart",
+    Action: "Click",
+    Label: "logInClick",
+    event: "gaEvent",
+  });
+}
+function uyeOlClick() {
+  dataLayer.push({
+    Category: "EmptyCart",
+    Action: "Click",
+    Label: "uyeOlClick",
+    event: "gaEvent",
+  });
+}
