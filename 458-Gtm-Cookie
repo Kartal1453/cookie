@@ -1,0 +1,51 @@
+function addCookies(element)
+{
+    var originalElement = element;
+    var arrayBefore = [];
+    var arrayAfter = [];
+    for (var index = 0; index < 15; index++)
+    {
+
+        if (!element.previousElementSibling.previousElementSibling)
+        {
+            break;
+        }
+        arrayBefore.unshift(element.previousElementSibling.previousElementSibling.querySelector("a").href);
+        element = element.previousElementSibling.previousElementSibling;
+    }
+    for (var index = 0; index < 15; index++)
+    {
+        if (!originalElement.nextElementSibling.nextElementSibling)
+        {
+            break;
+        }
+        arrayAfter.unshift(originalElement.nextElementSibling.nextElementSibling.querySelector("a").href);
+        originalElement = element.nextElementSibling.nextElementSibling;
+    }
+    arrayBefore = JSON.stringify(arrayBefore);
+    arrayAfter = JSON.stringify(arrayAfter);
+    localStorage.setItem("arrayBefore", arrayBefore);
+    localStorage.setItem("arrayAfter", arrayAfter);
+}
+
+function oncekiSonraki()
+{
+    var products = [...document.querySelectorAll(".c-items > div")];
+    for (var index = 0; index < products.length; index++)
+    {
+        products[index].addEventListener("click", function ()
+        {
+            addCookies(products[index]);
+        });
+
+    }
+
+}
+
+if (document.readyState == "loading")
+{
+    document.addEventListener("DOMContentLoaded",oncekiSonraki);
+} else
+{
+    oncekiSonraki()
+}
