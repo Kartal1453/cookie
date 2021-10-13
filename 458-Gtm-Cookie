@@ -3,7 +3,7 @@ function addCookies(element)
     var originalElement = element;
     var arrayBefore = [];
     var arrayAfter = [];
-    for (var index = 0; index < 15; index++)
+    for (var index = 0; index < 20; index++)
     {
 
         if (!element.previousElementSibling.previousElementSibling)
@@ -13,7 +13,7 @@ function addCookies(element)
         arrayBefore.unshift(element.previousElementSibling.previousElementSibling.querySelector("a").href);
         element = element.previousElementSibling.previousElementSibling;
     }
-    for (var index = 0; index < 15; index++)
+    for (var index = 0; index < 20; index++)
     {
         if (!originalElement.nextElementSibling.nextElementSibling)
         {
@@ -30,7 +30,7 @@ function addCookies(element)
 
 function oncekiSonraki()
 {
-    var products = [...document.querySelectorAll(".c-items > div")];
+    var products = Array.from(document.querySelectorAll(".c-items > div"));
     for (var index = 0; index < products.length; index++)
     {
         products[index].addEventListener("click", function ()
