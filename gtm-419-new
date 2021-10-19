@@ -1,0 +1,8 @@
+var dom_observer = new MutationObserver(function (mutation) {
+    if(customerType === 5 && !!document.querySelector(".cart-empty")&& !google_tag_manager['GTM-P7BHVG'].dataLayer.get('419')){
+        dataLayer.push({'event': 'optimize.activate419', "419": "true"});
+        }
+})
+var container = document.body
+var configs = {subtree: true,attributes: false, childList: true, characterData: false}
+dom_observer.observe(container, configs)
