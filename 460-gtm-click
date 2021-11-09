@@ -1,0 +1,34 @@
+var dom_observer = new MutationObserver(function () { 
+    if (document.querySelector(".state-block-desc") &&document.querySelector(".state-block-desc").querySelector("span").innerText =='SİPARİŞİ TAMAMLA' && document.querySelector(".ikinciSozlesmeText")){
+      document
+      .querySelectorAll(".state-block-desc")[1]
+      .addEventListener("click", siparisOrj);
+      document
+      .querySelectorAll(".state-block-desc")[0].addEventListener("click", siparisSecond);
+    }
+    if (document.querySelector(".state-block-desc") &&document.querySelector(".state-block-desc").querySelector("span").innerText =='SİPARİŞİ TAMAMLA' && !!!document.querySelector(".ikinciSozlesmeText")) {
+      document
+      .querySelector(".state-block-desc")
+      .addEventListener("click", siparisOrj);
+    }
+        
+  }),
+  container = document.body,
+  configs = { subtree: !0, attributes: !1, childList: !0, characterData: !1 };
+dom_observer.observe(container, configs);
+function siparisOrj() {
+  dataLayer.push({
+    Category: "Checkout",
+    Action: "Click",
+    Label: "siparisOrj",
+    event: "gaEvent",
+  });
+}
+function siparisSecond() {
+  dataLayer.push({
+    Category: "Checkout",
+    Action: "Click",
+    Label: "siparisSecond",
+    event: "gaEvent",
+  });
+}
