@@ -1,0 +1,19 @@
+var dom_observer = new MutationObserver(function (mutation) {
+    if(!!document.querySelector(".addressContainer")){
+       document.querySelectorAll(".addressContainer").forEach(function(t,i){
+           if (t.closest('.fadeInDown') == null &&!!t.classList.contains("ActiveButton")) {
+       var infoMh = t.querySelector(".addressContainerCenter").querySelector(".addressContainerInfo").querySelector(".addressContainerSubtitle").textContent;
+       var searchTerm = "Mh";
+       var indexOfFirst = infoMh.indexOf(searchTerm);
+       var nameMh = infoMh.slice(0,indexOfFirst);
+       if ((nameMh == 'İstanbul / Esenyurt Güzelyurt '|| nameMh == 'İstanbul / Eyüp Alibeyköy '|| nameMh == 'İstanbul / Kağıthane Gürsel ') && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('461')) {
+           dataLayer.push({'event': 'optimize.activate461', "461": "true"});
+           dom_observer.disconnect();
+       }
+           }
+       });
+    }
+   });
+   var container = document.body;
+   var configs = {subtree: true,attributes: false, childList: true, characterData: false};
+   dom_observer.observe(container, configs);
