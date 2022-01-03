@@ -1,0 +1,20 @@
+function anasayfa(){
+  console.log("before");
+    if(!!!document.querySelector(".switch-filter").nextElementSibling.querySelector(".collapsible-filter-container__body")){
+      console.log("after");
+  document.querySelector(".switch-filter").nextElementSibling.querySelector(".collapsible-filter-container__header").click();
+  document.querySelector(".switch-filter").nextElementSibling.nextElementSibling.querySelector(".collapsible-filter-container__header").click();
+  document.querySelector(".switch-filter").nextElementSibling.nextElementSibling.nextElementSibling.querySelector(".collapsible-filter-container__header").click();
+  document.querySelector(".switch-filter").nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.querySelector(".collapsible-filter-container__header").click();
+    }
+}
+
+ ready();
+  function ready() {
+    if (document.readyState == "loading") {
+      // still loading, wait for the event
+      document.addEventListener("DOMContentLoaded", anasayfa);
+    } else {
+      // DOM is ready!
+      anasayfa();
+    }}
