@@ -1,0 +1,12 @@
+
+function anasayfa(){
+    localizationsJson.webUI_Checkout_BillingAndDeliveryAddressDifferentInfo ="Ücretsiz hediye paketi gönderimi için fatura ve teslimat adresi farklı olmalıdır."
+}
+
+ ready();
+  function ready() {
+    if (document.readyState == "loading") {
+      document.addEventListener("DOMContentLoaded", anasayfa);
+    } else {
+      anasayfa();
+    }}
