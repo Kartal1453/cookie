@@ -1,0 +1,8 @@
+var dom_observer = new MutationObserver(function (mutation) {
+    if( parseFloat(document.querySelector("[name='DiscountPrice_1']").content) <=254&& !google_tag_manager['GTM-P7BHVG'].dataLayer.get('457')){
+        dataLayer.push({'event': 'optimize.activate457', "457": "true"});console.log("pushing");dom_observer.disconnect();
+        }
+})
+var container = document.body
+var configs = {subtree: true,attributes: false, childList: true, characterData: false}
+dom_observer.observe(container, configs)
