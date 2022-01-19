@@ -1,17 +1,17 @@
 window.onload = function() {
-            if( ((!!document.querySelector(".price") && parseFloat(document.querySelector(".price").innerText) <= 249) || (!!document.querySelector(".basket-discount") && parseFloat(document.querySelector(".basket-discount").innerText) <= 249))){ 
-                dom_observer.disconnect();
-                console.log("stop 462");
-            } 
-          };
+    if( ((!!document.querySelector(".price") && parseFloat(document.querySelector(".price").innerText) <= 249) || (!!document.querySelector(".basket-discount") && parseFloat(document.querySelector(".basket-discount").innerText) <= 249))){ 
+        dom_observer.disconnect();
+        console.log("stop 462");
+    } 
+  };
 
-        var dom_observer = new MutationObserver(function (mutation) {
-            if( ((!!document.querySelector(".price") && parseFloat(document.querySelector(".price").innerText) >= 250) || (!!document.querySelector(".basket-discount") && parseFloat(document.querySelector(".basket-discount").innerText) >= 250))&& !google_tag_manager['GTM-P7BHVG'].dataLayer.get('462')){
-                dataLayer.push({'event': 'optimize.activate462', "462": "true"});
-                console.log("run 462");
-                dom_observer.disconnect();
-                }
-        })
-        var container = document.body
-        var configs = {subtree: true,attributes: false, childList: true, characterData: false}
-        dom_observer.observe(container, configs)
+var dom_observer = new MutationObserver(function (mutation) {
+    if( ((!!document.querySelector(".price") && parseFloat(document.querySelector(".price").innerText) >= 250) || (!!document.querySelector(".basket-discount") && parseFloat(document.querySelector(".basket-discount").innerText) >= 250))&& !google_tag_manager['GTM-P7BHVG'].dataLayer.get('462')){
+        dataLayer.push({'event': 'optimize.activate462', "462": "true"});
+        console.log("run 462");
+        dom_observer.disconnect();
+        }
+})
+var container = document.body
+var configs = {subtree: true,attributes: false, childList: true, characterData: false}
+dom_observer.observe(container, configs)
