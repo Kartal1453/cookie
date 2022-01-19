@@ -1,4 +1,4 @@
-        window.onload = function() {
+window.onload = function() {
             if( ((!!document.querySelector(".price") && parseFloat(document.querySelector(".price").innerText) >= 250) || (!!document.querySelector(".basket-discount") && parseFloat(document.querySelector(".basket-discount").innerText)  >= 250))){ 
                 dom_observer.disconnect();
                 console.log("stop 457");
