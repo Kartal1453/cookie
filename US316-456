@@ -1,0 +1,601 @@
+//////////////// Variant 1 
+
+var css = `
+.ikon-test-image-div > a > img {
+    width: 100%;
+}
+@media only screen and (max-width: 374px){
+    .ikon-test-wrapper {
+        font-size: 10px !important;
+    }
+}
+.ikon-test-image-div > a {
+    text-decoration: none;
+    width: 100%;
+}
+.ikon-test-image-div > a:active {
+    color: black;
+}
+.ikon-test-image-div > a > p {
+    margin: 0;
+    margin-top: 7px;
+    font-family: 'Open Sans';
+}
+.ikon-test-wrapper {
+    margin-bottom: 15px;
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    column-gap: 17px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    line-height: 20px;
+    row-gap: 10px;
+}
+@media only screen and (max-width: 1200px){
+
+    .ikon-test-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 600px){
+
+    .ikon-test-wrapper {
+        font-size: 12px;
+        margin-bottom: 12px;
+        margin-top: 15px;
+    }
+    .ikon-test-image-div > a > p {
+        margin: 0;
+        margin-top: 2px;
+
+    }
+}
+          `;
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+
+
+
+function addAnotherButton()
+{
+    if (window.location.href.startsWith("https://www.lcwaikiki.com/tr-TR/TR/lp/32-33-erkek"))
+    {
+        let elementToAddAfter = document.querySelector(".row.fullwidth.fullwidth_Mobile > .fullwidth");
+        elementToAddAfter.insertAdjacentHTML('afterend', `<div class="ikon-test-wrapper fullwidth">
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/kazak">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-kazak_v2.png
+        " alt="">
+        <p>KAZAK</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/gomlek">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-gomlek_v2.png
+        " alt="">
+        <p>GÖMLEK</p>
+    </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/erkek_mont_kaban-14">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-mont_v2.png
+
+        " alt="">
+        <p>MONT VE KABAN</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/pantolon">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-pantolon_v2.png
+
+        " alt="">
+        <p>PANTOLON</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/spor-giyim-217">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-sporgiyim_v2.png
+
+        " alt="">
+        <p>SPOR GİYİM</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/esofman-alt">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-esofmanalti_v2.png
+        "
+            alt="">
+        <p>EŞOFMAN ALT</p>
+        </a>
+    </div>
+</div>`);
+    } else if (window.location.href.startsWith("https://www.lcwaikiki.com/tr-TR/TR/lp/32-33-kadin"))
+    {
+        let elementToAddAfter = document.querySelector(".row.fullwidth.fullwidth_Mobile > .fullwidth > .fullwidth");
+        elementToAddAfter.insertAdjacentHTML('afterend', `<div class="ikon-test-wrapper fullwidth">
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/elbise">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-elbise_v2.png
+
+        " alt="">
+        <p>ELBİSE</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/Tunik">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-tunik_v2.png
+        " alt="">
+        <p>TUNİK</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/kazak">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-kazak_v2.png" alt="">
+        <p>KAZAK</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/bluz">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-bluz_v2.png
+        " alt="">
+        <p>BLUZ</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/pantolon">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-pantolon_v2.png
+        " alt="">
+        <p>PANTOLON</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/kadin_mont_kaban-56">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-mont_v2.png
+        "  alt="">
+        <p>MONT VE KABAN</p>
+        </a>
+    </div>
+</div>`);
+    } else if (window.location.href.startsWith("https://www.lcwaikiki.com/tr-TR/TR/lp/32-33-cocuk"))
+    {
+        let elementToAddAfter = document.querySelector(".row.fullwidth.fullwidth_Mobile > .fullwidth");
+        elementToAddAfter.insertAdjacentHTML('afterend', `<div class="ikon-test-wrapper fullwidth">
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/kiz-erkek-cocuk-sweatshirt
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-sweat_v2.png
+        " alt="">
+        <p>SWEATSHİRT</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kiz-cocuk/elbise
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-elbise_v2.png
+        " alt="">
+        <p>ELBİSE</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/cocuk-spor-giyim-urunleri
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-sporgiyim_v2.png
+        " alt="">
+        <p>SPOR GİYİM</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/cocuk-pantolon-urunleri
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-pantolon_v2.png
+        " alt="">
+        <p>PANTOLON</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/cocuk-mont-kaban-urunleri
+    ">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-mont_v2.png
+        " alt="">
+        <p>MONT VE KABAN</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/cocuk-spor-ayakkabilari
+    ">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-sporayakkabi_v2.png
+        "  alt="">
+        <p>SPOR AYAKKABI</p>
+        </a>
+    </div>
+</div>`);
+    } else if (window.location.href.startsWith("https://www.lcwaikiki.com/tr-TR/TR/lp/32-33-bebek"))
+    {
+                var css = `
+        .ikon-test-wrapper {
+        width: 100%;
+        padding-top: 32px;
+        margin-top: 0 !important;
+        }
+        @media only screen and (max-width: 600px){
+            .ikon-test-wrapper {
+                margin-bottom: 12px;
+                padding-top: 15px;
+            }
+        }
+                `;
+        var style = document.createElement("style");
+        style.appendChild(document.createTextNode(css));
+        document.head.appendChild(style);
+        let elementToAddAfter = document.querySelectorAll(".row.fullwidth.fullwidth_Mobile.fullwidth > .frameBox > .image_Box ")[3];
+        elementToAddAfter.insertAdjacentHTML('afterend', `<div class="ikon-test-wrapper fullwidth">
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/bebek-takim-urunleri
+    ">
+        <img src=" https://i.ibb.co/v3yCkTs/bebek-takim_v2.png
+        " alt="">
+        <p>TAKIM</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kiz-bebek/elbise
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-elbise_v2.png
+        " alt="">
+        <p>ELBİSE</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/bebek-spor-giyim-urunleri
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-sporgiyim_v2.png
+        " alt="">
+        <p>SPOR GİYİM</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/bebek-kazaklari
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-kazak-v2.png
+        " alt="">
+        <p>KAZAK</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/yenidogan-urunleri
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-yenidogan_v2.png
+        " alt="">
+        <p>YENİDOĞAN</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/bebek-mont-kaban-modelleri    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-mont_v2.png
+        "  alt="">
+        <p>MONT VE KABAN</p>
+        </a>
+    </div>
+</div>`);
+    }
+
+
+
+}
+
+ready();
+function ready()
+{
+    if (document.readyState == "loading")
+    {
+        document.addEventListener("DOMContentLoaded", addAnotherButton);
+    } else
+    {
+        addAnotherButton();
+    }
+}
+
+
+//////////////// Variant 2 
+
+
+
+
+var css = `
+.ikon-test-image-div > a > img {
+    width: 100%;
+}
+@media only screen and (max-width: 374px){
+    .ikon-test-wrapper {
+        font-size: 10px !important;
+    }
+}
+.ikon-test-image-div > a {
+    text-decoration: none;
+    width: 100%;
+}
+.ikon-test-image-div > a:active {
+    color: black;
+}
+.ikon-test-image-div > a > p {
+    margin: 0;
+    margin-top: 7px;
+    font-family: 'Open Sans';
+}
+.ikon-test-wrapper {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    column-gap: 17px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    line-height: 20px;
+    row-gap: 10px;
+}
+@media only screen and (max-width: 1200px){
+
+    .ikon-test-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 600px){
+
+    .ikon-test-wrapper {
+        font-size: 12px;
+        margin-bottom: 12px;
+        margin-top: 15px;
+    }
+    .ikon-test-image-div > a > p {
+        margin: 0;
+        margin-top: 2px;
+
+    }
+}
+          `;
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+
+
+
+function addAnotherButton()
+{
+    if (window.location.href.startsWith("https://www.lcwaikiki.com/tr-TR/TR/lp/32-33-erkek"))
+    {
+        let elementToAddAfter = document.querySelector(".row.fullwidth.fullwidth_Mobile > .fullwidth");
+        elementToAddAfter.insertAdjacentHTML('afterbegin', `<div class="ikon-test-wrapper fullwidth">
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/kazak">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-kazak_v2.png
+        " alt="">
+        <p>KAZAK</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/gomlek">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-gomlek_v2.png
+        " alt="">
+        <p>GÖMLEK</p>
+    </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/erkek_mont_kaban-14">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-mont_v2.png
+
+        " alt="">
+        <p>MONT VE KABAN</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/pantolon">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-pantolon_v2.png
+
+        " alt="">
+        <p>PANTOLON</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/spor-giyim-217">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-sporgiyim_v2.png
+
+        " alt="">
+        <p>SPOR GİYİM</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/esofman-alt">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/erkek-esofmanalti_v2.png
+        "
+            alt="">
+        <p>EŞOFMAN ALT</p>
+        </a>
+    </div>
+</div>`);
+    } else if (window.location.href.startsWith("https://www.lcwaikiki.com/tr-TR/TR/lp/32-33-kadin"))
+    {
+        let elementToAddAfter = document.querySelector(".row.fullwidth.fullwidth_Mobile > .fullwidth");
+        elementToAddAfter.insertAdjacentHTML('afterbegin', `<div class="ikon-test-wrapper fullwidth">
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/elbise">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-elbise_v2.png
+
+        " alt="">
+        <p>ELBİSE</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/Tunik">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-tunik_v2.png
+        " alt="">
+        <p>TUNİK</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/kazak">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-kazak_v2.png" alt="">
+        <p>KAZAK</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/bluz">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-bluz_v2.png
+        " alt="">
+        <p>BLUZ</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/pantolon">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-pantolon_v2.png
+        " alt="">
+        <p>PANTOLON</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kadin/kadin_mont_kaban-56">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/kadin-mont_v2.png
+        "  alt="">
+        <p>MONT VE KABAN</p>
+        </a>
+    </div>
+</div>`);
+    } else if (window.location.href.startsWith("https://www.lcwaikiki.com/tr-TR/TR/lp/32-33-cocuk"))
+    {
+        let elementToAddAfter = document.querySelector(".row.fullwidth.fullwidth_Mobile > .fullwidth");
+        elementToAddAfter.insertAdjacentHTML('afterbegin', `<div class="ikon-test-wrapper fullwidth">
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/kiz-erkek-cocuk-sweatshirt
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-sweat_v2.png
+        " alt="">
+        <p>SWEATSHİRT</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kiz-cocuk/elbise
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-elbise_v2.png
+        " alt="">
+        <p>ELBİSE</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/cocuk-spor-giyim-urunleri
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-sporgiyim_v2.png
+        " alt="">
+        <p>SPOR GİYİM</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/cocuk-pantolon-urunleri
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-pantolon_v2.png
+        " alt="">
+        <p>PANTOLON</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/cocuk-mont-kaban-urunleri
+    ">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-mont_v2.png
+        " alt="">
+        <p>MONT VE KABAN</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/cocuk-spor-ayakkabilari
+    ">
+        <img src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/cocuk-sporayakkabi_v2.png
+        "  alt="">
+        <p>SPOR AYAKKABI</p>
+        </a>
+    </div>
+</div>`);
+    } else if (window.location.href.startsWith("https://www.lcwaikiki.com/tr-TR/TR/lp/32-33-bebek"))
+    {
+        let elementToAddAfter = document.querySelector(".row.fullwidth.fullwidth_Mobile.fullwidth");
+        elementToAddAfter.insertAdjacentHTML('afterbegin', `<div class="ikon-test-wrapper fullwidth">
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/bebek-takim-urunleri
+    ">
+        <img src=" https://i.ibb.co/v3yCkTs/bebek-takim_v2.png
+        " alt="">
+        <p>TAKIM</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/kategori/kiz-bebek/elbise
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-elbise_v2.png
+        " alt="">
+        <p>ELBİSE</p>
+        </a>
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/bebek-spor-giyim-urunleri
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-sporgiyim_v2.png
+        " alt="">
+        <p>SPOR GİYİM</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/bebek-kazaklari
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-kazak-v2.png
+        " alt="">
+        <p>KAZAK</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/yenidogan-urunleri
+    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-yenidogan_v2.png
+        " alt="">
+        <p>YENİDOĞAN</p>
+        </a>
+
+    </div>
+    <div class="ikon-test-image-div">
+    <a href="https://www.lcwaikiki.com/tr-TR/TR/etiket/bebek-mont-kaban-modelleri    ">
+        <img src=" https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/bebek-mont_v2.png
+        "  alt="">
+        <p>MONT VE KABAN</p>
+        </a>
+    </div>
+</div>`);
+    }
+   
+
+}
+
+ready();
+function ready()
+{
+    if (document.readyState == "loading")
+    {
+        document.addEventListener("DOMContentLoaded", addAnotherButton);
+    } else
+    {
+        addAnotherButton();
+    }
+}
+
