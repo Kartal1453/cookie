@@ -1,0 +1,11 @@
+document.querySelectorAll(".ikon-test-image-div").forEach(function (element)
+    {
+        element.addEventListener("click", function ()
+        {
+            dataLayer.push({
+                Category: "landing-page",
+                Label: "alt-kategori-ikon",
+                Action: "click",
+            });
+        });
+    });
