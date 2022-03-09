@@ -1,0 +1,11 @@
+document.querySelectorAll(".image_Box").forEach(function (element)
+    {
+        element.addEventListener("click", function ()
+        {
+            dataLayer.push({
+                Category: "landing-page",
+                Label: "promotion-banner",
+                Action: "click",event: "gaEvent"
+            });
+        });
+    });
