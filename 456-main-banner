@@ -1,0 +1,21 @@
+if(!!document.querySelector(".uzun.visible-lg.visible-md")){
+    document.querySelector(".uzun.visible-lg.visible-md").addEventListener("click", function () {
+        dataLayer.push({
+            Category: "landing-page",
+            Label: "main-banner",
+            Action: "click",
+            event: "gaEvent"
+        }); 
+    })
+}
+
+if(!!document.querySelector(".uzun.visible-xs.visible-sm")){
+    document.querySelector(".uzun.visible-xs.visible-sm").addEventListener("click", function () {
+        dataLayer.push({
+            Category: "landing-page",
+            Label: "main-banner",
+            Action: "click",
+            event: "gaEvent"
+        }); 
+    })
+}
