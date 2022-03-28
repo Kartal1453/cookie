@@ -1,0 +1,89 @@
+function emailDomain(params) {
+    var css = `
+input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+`;
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+var email = document.querySelector("[data-tracking-category='Üyelik']");
+var datalist = document.createElement("datalist");
+email.setAttribute(`list`, `email-options`);
+datalist.setAttribute(`id`, `email-options`);
+
+email.insertAdjacentElement("afterend", datalist);
+var domains = ["@yahoo.com", "@gmail.com", "@hotmail.com", "@lcwaikiki.com", "@outloook.com", "@msn.com", "@icloud.com", "@windowslive.com"];
+email.addEventListener('keyup', function updateValue(e) {
+    var value = e.target.value;
+    if (value.indexOf("@y") != -1 || value.indexOf("@h") != -1 || value.indexOf("@g") != -1 || value.indexOf("@l") != -1 || value.indexOf("@o") != -1 || value.indexOf("@m") != -1 || value.indexOf("@i") != -1 || value.indexOf("@w") != -1) {
+        var newOptionsString = "";
+        var t = value.split("@")[1];
+        value = value.split("@")[0];
+        domains.forEach(element => {
+            if (element.includes(`@${t}`)) {
+                newOptionsString +=
+                    "<option value='" +
+                    value +
+                    element +
+                    "'>";
+            }
+            datalist.innerHTML = `${newOptionsString}`;
+        });
+        if (`<option value='${e.target.value}'>` == newOptionsString) {
+            datalist.innerHTML = ``;
+        }
+    } else {
+        datalist.innerHTML = ``;
+    }
+});
+  if (document.querySelector("[data-tracking-label='UyeliksizEmail']")) {
+    var css = `
+    input::-webkit-calendar-picker-indicator {
+        opacity: 0;
+      }
+    `;
+    var style = document.createElement("style");
+    style.appendChild(document.createTextNode(css));
+    document.head.appendChild(style);
+    var emailUyeliksiz = document.querySelector("[data-tracking-label='UyeliksizEmail']");
+    var datalistUyeliksiz = document.createElement("datalist");
+    emailUyeliksiz.setAttribute(`list`, `email-options-uyeliksiz`);
+    datalistUyeliksiz.setAttribute(`id`, `email-options-uyeliksiz`);
+    
+    emailUyeliksiz.insertAdjacentElement("afterend", datalistUyeliksiz);
+    var domainsUyeliksiz = ["@yahoo.com", "@gmail.com", "@hotmail.com", "@lcwaikiki.com", "@outloook.com", "@msn.com", "@icloud.com", "@windowslive.com"];
+    emailUyeliksiz.addEventListener('keyup', function updateValue(ev) {
+        var valueUyeliksiz = ev.target.value;
+        if (valueUyeliksiz.indexOf("@y") != -1 || valueUyeliksiz.indexOf("@h") != -1 || valueUyeliksiz.indexOf("@g") != -1 || valueUyeliksiz.indexOf("@l") != -1 || valueUyeliksiz.indexOf("@o") != -1 || valueUyeliksiz.indexOf("@m") != -1 || valueUyeliksiz.indexOf("@i") != -1 || valueUyeliksiz.indexOf("@w") != -1) {
+            var newOptionsStringUyeliksiz = "";
+            var tUyeliksiz = valueUyeliksiz.split("@")[1];
+            valueUyeliksiz = valueUyeliksiz.split("@")[0];
+            domainsUyeliksiz.forEach(elementUyeliksiz => {
+                if (elementUyeliksiz.includes(`@${tUyeliksiz}`)) {
+                    newOptionsStringUyeliksiz +=
+                        "<option value='" +
+                        valueUyeliksiz +
+                        elementUyeliksiz +
+                        "'>";
+                }
+                datalistUyeliksiz.innerHTML = `${newOptionsStringUyeliksiz}`;
+            });
+            if (`<option value='${ev.target.value}'>` == newOptionsStringUyeliksiz) {
+                datalistUyeliksiz.innerHTML = ``;
+            }
+        } else {
+            datalistUyeliksiz.innerHTML = ``;
+        }
+    });
+}
+}
+
+
+ready();
+function ready() {
+  if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded", emailDomain);
+  } else {
+    emailDomain();
+  }}
