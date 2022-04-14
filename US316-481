@@ -1,0 +1,43 @@
+function changeText() {
+    if (!!document.querySelector(".menu-nav__lists")) {
+        document.querySelector(".menu-nav__lists").querySelectorAll(".menu-header-item  ")[3].querySelectorAll(".tab-header__age")[2].innerHTML = `(0-12 AY)`;
+        document.querySelector(".menu-nav__lists").querySelectorAll(".menu-header-item  ")[3].querySelectorAll(".tab-header__age")[2].classList.add("stop-desktop-function");
+    }
+
+}
+function changeTextMobile() {
+    if (!!document.querySelector("img[src='https://static.lcwaikiki.com/Resource/Images/Other/637837627812765167_YENİDOGAN.png']")) {
+        document.querySelector("img[src='https://static.lcwaikiki.com/Resource/Images/Other/637837627812765167_YENİDOGAN.png']").closest(".new-accordion-item__title ").childNodes[1].textContent = "YENİDOĞAN (0-12 AY)";
+        document.querySelector("img[src='https://static.lcwaikiki.com/Resource/Images/Other/637837627812765167_YENİDOGAN.png']").closest(".new-accordion-item__title ").classList.add("stop-mobile-function");
+    }
+    if (!!(!!document.querySelector(".sub-zone-title") && document.querySelector(".sub-zone-title").innerText == 'YENİDOĞAN (0-24 AY)')) {
+        document.querySelector(".sub-zone-title").innerText = 'YENİDOĞAN (0-12 AY)';
+    }
+}
+ready();
+function ready() {
+    if (document.readyState == "loading") {
+        document.addEventListener("DOMContentLoaded", changeText);
+        document.addEventListener("DOMContentLoaded", changeTextMobile);
+    } else {
+        changeText();
+        changeTextMobile();
+    }
+    window.addEventListener("load", function () {
+        var dom_observer = new MutationObserver(function (mutation) {
+            if (!!document.querySelector(".menu-nav__lists") && !!!document.querySelector(".stop-desktop-function")) {
+                changeText();
+            }
+
+            setTimeout(() => {
+                if (!!document.querySelector(".react-full-page-container") && !!!document.querySelector(".stop-mobile-function") && (!!document.querySelector("img[src='https://static.lcwaikiki.com/Resource/Images/Other/637837627812765167_YENİDOGAN.png']") || !!(!!document.querySelector(".sub-zone-title") && document.querySelector(".sub-zone-title").innerText == 'YENİDOĞAN (0-24 AY)'))) {
+                    changeTextMobile(); 
+                }
+            }, 0.2);
+
+        })
+        var container = document.body
+        var configs = { subtree: true, attributes: false, childList: true, characterData: false }
+        dom_observer.observe(container, configs)
+    })
+} 
