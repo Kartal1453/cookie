@@ -46,7 +46,6 @@
       const element = array[index];
       element.querySelector(".text-ratings-average").innerText = `${(Math.round(element.querySelector("a").dataset.score * 10, 2) / 10)}`;
       element.querySelector(".add-hr-style").classList.remove("change-display");
-      console.log("1");
     }
 
   }
