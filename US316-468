@@ -1,0 +1,66 @@
+var css = `
+.text-ratings-average{
+    padding: 0 !important;
+    margin: 4px 0 0 5px !important;
+    font-size: 12px;
+    color: #333;
+}
+.product-card__review-count {
+    margin-left: 5px !important;
+    margin-top: 2px !important;
+}
+hr.add-hr-style {
+    border: none;
+    border-left: 1px solid #333;
+    height: 13px;
+    width: 1px;
+    margin-left: 6px;
+    margin-right: 0;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+.container-ratings-average {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.change-display{
+display: none;
+}
+          `;
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+
+
+function ratingsAverage(params) {
+    document.querySelectorAll(".product-card").forEach(element => {
+        if (!!!element.querySelector(".product-card__reviews").querySelector(".container-ratings-average")) {
+            element.querySelector(".product-card__reviews").querySelector(".product-card__review-count").insertAdjacentHTML("beforebegin", `<div class = "container-ratings-average"><p class = "text-ratings-average"></p><hr class="add-hr-style change-display"></div>`)
+        }
+        document.querySelectorAll(".text-ratings-average").forEach(element => {
+            element.innerText = `${(Math.round(element.parentElement.parentElement.parentElement.parentElement.dataset.score * 10, 2) / 10)}`;
+            element.closest(".container-ratings-average").querySelector(".add-hr-style").classList.remove("change-display");
+        });
+
+    });
+}
+
+ready();
+function ready() {
+    if (document.readyState == "loading") {
+        document.addEventListener("DOMContentLoaded", ratingsAverage);
+    } else {
+        ratingsAverage();
+    }
+    window.addEventListener("load", function () {
+        var dom_observer = new MutationObserver(function (mutation) {
+            if (!!document.querySelector(".desktop-filter-area--fetching") || !!document.querySelector(".product-grid--fetching")) {
+                ratingsAverage(); console.log("run");
+            }
+        });
+        var container = document.body;
+        var configs = { attributes: false, childList: true, characterData: false };
+        dom_observer.observe(container, configs);
+    });
+}
