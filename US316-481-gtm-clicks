@@ -1,0 +1,33 @@
+function yenidoganAltCategory(e) {
+    dataLayer.push({
+        Category: "Menu",
+        Action: "Click",
+        Label: `YeniDogan Alt | ${e.target.innerText}`,
+        event: "gaEvent",
+      });
+}
+function yenidoganCategory(e) {
+    dataLayer.push({
+        Category: "Menu",
+        Action: "Click",
+        Label: `Yenidogan | ${e.target.childNodes[1].textContent}`,
+        event: "gaEvent",
+      });
+}
+var dom_observer = new MutationObserver(function () { 
+    if (!!document.querySelector(".sub-zone-title") && document.querySelector(".sub-zone-title").innerText.includes("YENİDOĞAN") && !!document.querySelector(".menu-item")) {
+        document.querySelectorAll(".menu-item").forEach(function(ev) {
+            ev.addEventListener("click", yenidoganAltCategory)
+        })
+      }
+
+      if (!!document.querySelector(".sub-zone-title") && document.querySelector(".sub-zone-title").innerText.includes("YENİDOĞAN")) {
+        document.querySelectorAll(".new-accordion-item__title").forEach(function(element) {
+            element.addEventListener("click", yenidoganCategory)    
+        }); 
+    }
+        
+  }),
+  container = document.body,
+  configs = { subtree: !1, attributes: !1, childList: !0, characterData: !1 };
+dom_observer.observe(container, configs);
