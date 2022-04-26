@@ -2,7 +2,7 @@ function yenidoganAltCategory(e) {
     dataLayer.push({
         Category: "Menu",
         Action: "Click",
-        Label: `YeniDogan Alt | ${e.target.innerText}`,
+        Label: "YeniDogan Alt | "+ e.target.innerText,
         event: "gaEvent",
       });
 }
@@ -10,7 +10,7 @@ function yenidoganCategory(e) {
     dataLayer.push({
         Category: "Menu",
         Action: "Click",
-        Label: `Yenidogan | ${e.target.childNodes[1].textContent}`,
+        Label: "Yenidogan | "+ e.target.childNodes[1].textContent,
         event: "gaEvent",
       });
 }
