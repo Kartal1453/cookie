@@ -1,0 +1,18 @@
+function populerCategory() {
+dataLayer.push({
+    Category: "SpecialCollections Mobile",
+    Action: "Click",
+    Label: "Populer Karakterler",
+    event: "gaEvent",
+  });
+}
+
+
+var dom_observer = new MutationObserver(function () { 
+  if (!!document.querySelector(".sub-zone-title") && (document.querySelector(".sub-zone-title").innerText.includes("ERKEK BEBEK (0-5 YAŞ)")|| document.querySelector(".sub-zone-title").innerText.includes("KIZ BEBEK (0-5 YAŞ)")|| document.querySelector(".sub-zone-title").innerText.includes("KIZ ÇOCUK (4-14 YAŞ)")|| document.querySelector(".sub-zone-title").innerText.includes("ERKEK ÇOCUK (4-14 YAŞ)"))) {
+    document.querySelector("[alt='Popüler Karakterler']").addEventListener("click", populerCategory)
+}  
+}),
+container = document.body,
+configs = { subtree: !1, attributes: !1, childList: !0, characterData: !1 };
+dom_observer.observe(container, configs);
