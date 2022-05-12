@@ -1,0 +1,27 @@
+  var dom_observer = new MutationObserver(function () { 
+    document.querySelectorAll("[placeholder='E-Posta Adresiniz']").forEach(function (e) {
+      if (e.parentElement.querySelector(".error") && e.parentElement.querySelector(".error").textContent =="Lütfen geçerli bir e-posta adresi giriniz." && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('476')) {
+        dataLayer.push({
+          Category:"Error",
+          Action:"Üyelik",
+          Label:"Email",
+          event:"gaEvent",
+          "476": "true"
+        });
+      }
+      if (e.parentElement.querySelector("#RegisterFormView_RegisterEmail-error") && e.parentElement.querySelector("#RegisterFormView_RegisterEmail-error").textContent =="Lütfen geçerli bir e-posta adresi giriniz." && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('476')) {
+        dataLayer.push({
+          Category:"Error",
+          Action:"Üyelik",
+          Label:"Email",
+          event:"gaEvent",
+          "476": "true"
+        });
+      }
+    })
+  
+        
+  }),
+  container = document.body,
+  configs = { subtree: !0, attributes: !1, childList: !0, characterData: !1 };
+dom_observer.observe(container, configs);
