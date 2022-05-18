@@ -14,5 +14,5 @@ var dom_observer = new MutationObserver(function () {
 }  
 }),
 container = document.body,
-configs = { subtree: !1, attributes: !1, childList: !0, characterData: !1 };
+configs = { subtree: !0, attributes: !1, childList: !0, characterData: !1 };
 dom_observer.observe(container, configs);
