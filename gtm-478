@@ -1,0 +1,17 @@
+var dom_observer = new MutationObserver(function () { 
+    
+    window.addEventListener('load', function() {
+      if (window.gaData["UA-21191506-3"].experiments == undefined && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('478')) {
+        dataLayer.push({event:"optimize.activate478","478": "true"});
+        dom_observer.disconnect();
+        }
+        if (!(window.gaData["UA-21191506-3"].experiments == undefined) && !(Object.keys(window.gaData["UA-21191506-3"].experiments).join(" ").includes("zoStwCM1QKqVFy8g7ObQYg")) && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('478')) {
+        dataLayer.push({event:"optimize.activate478","478": "true"});
+        dom_observer.disconnect();
+        }
+        
+    });
+        }),
+        container = document.body,
+        configs = { subtree: !1, attributes: !1, childList: !0, characterData: !1 };
+      dom_observer.observe(container, configs);
