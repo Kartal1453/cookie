@@ -5,5 +5,5 @@ var dom_observer = new MutationObserver(function (mutation) {
         }
 })
 var container = document.body
-var configs = {attributes: false, childList: true, characterData: false}
+var configs = {subtree: true,attributes: false, childList: true, characterData: false}
 dom_observer.observe(container, configs)
