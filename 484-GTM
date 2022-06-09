@@ -1,0 +1,16 @@
+window.onload = function() {
+        dom_observer.disconnect(); 
+  };
+var dom_observer = new MutationObserver(function (mutation) {
+if (!!localStorage.getItem("ins-cart-product-list") && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('484') ) {
+    JSON.parse(localStorage.getItem("ins-cart-product-list")).data.productList.forEach(function (element) {
+        if (element.id == productCode) {
+            dataLayer.push({'event': 'optimize.activate484', "484": "true"});
+            dom_observer.disconnect(); 
+        }
+    });
+}
+})
+var container = document.body
+var configs = {subtree: true,attributes: false, childList: true, characterData: false}
+dom_observer.observe(container, configs)
