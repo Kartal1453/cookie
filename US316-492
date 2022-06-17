@@ -1,0 +1,132 @@
+///////////////////// Variant 1 Bebek 0-6 Yaş / Çocuk 4-14 Yaş
+
+if (document.readyState == "loading")
+{
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+      
+///////////////////// 1. varyasyon Desktop
+
+megaMenuRaw.Desktop[3].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='ERKEK BEBEK (0-6 YAŞ)';
+megaMenuRaw.Desktop[3].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='KIZ BEBEK (0-6 YAŞ)';
+
+//////////////////////// mobile menu
+
+megaMenuRaw.Responsive[3].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='ERKEK BEBEK (0-6 YAŞ)';
+megaMenuRaw.Responsive[3].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='KIZ BEBEK (0-6 YAŞ)';
+_uiTranslates.outlet_BabyMenuAgeDesc  = '( 0-6 Yaş )';
+    }
+    );
+} else
+{
+
+
+ 
+///////////////////// 1. varyasyon Desktop
+
+megaMenuRaw.Desktop[3].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='ERKEK BEBEK (0-6 YAŞ)';
+megaMenuRaw.Desktop[3].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='KIZ BEBEK (0-6 YAŞ)';
+
+//////////////////////// mobile menu
+
+megaMenuRaw.Responsive[3].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='ERKEK BEBEK (0-6 YAŞ)';
+megaMenuRaw.Responsive[3].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='KIZ BEBEK (0-6 YAŞ)';
+_uiTranslates.outlet_BabyMenuAgeDesc  = '( 0-6 Yaş )';
+
+
+}
+
+
+//////////// Variant 2 Bebek 0-6 Yaş / Çocuk 5-14 Yaş
+if (document.readyState == "loading")
+{
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+      
+///////////////////// 2. varyasyon Desktop
+
+megaMenuRaw.Desktop[2].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='KIZ ÇOCUK (5-14 YAŞ)';
+megaMenuRaw.Desktop[2].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='ERKEK ÇOCUK (5-14 YAŞ)';
+
+megaMenuRaw.Desktop[3].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='ERKEK BEBEK (0-6 YAŞ)';
+megaMenuRaw.Desktop[3].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='KIZ BEBEK (0-6 YAŞ)';
+
+////////////////////// mobile 
+
+megaMenuRaw.Responsive[2].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='KIZ ÇOCUK (5-14 YAŞ)';
+megaMenuRaw.Responsive[2].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='ERKEK ÇOCUK (5-14 YAŞ)';
+
+_uiTranslates.outlet_ChildMenuAgeDesc = '( 5-14 Yaş )';
+
+megaMenuRaw.Responsive[3].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='ERKEK BEBEK (0-6 YAŞ)';
+megaMenuRaw.Responsive[3].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='KIZ BEBEK (0-6 YAŞ)';
+
+_uiTranslates.outlet_BabyMenuAgeDesc  = '( 0-6 Yaş )';
+    }
+    );
+} else
+{
+
+
+ 
+///////////////////// 2. varyasyon Desktop
+
+megaMenuRaw.Desktop[2].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='KIZ ÇOCUK (5-14 YAŞ)';
+megaMenuRaw.Desktop[2].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='ERKEK ÇOCUK (5-14 YAŞ)';
+
+megaMenuRaw.Desktop[3].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='ERKEK BEBEK (0-6 YAŞ)';
+megaMenuRaw.Desktop[3].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='KIZ BEBEK (0-6 YAŞ)';
+
+////////////////////// mobile 
+
+megaMenuRaw.Responsive[2].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='KIZ ÇOCUK (5-14 YAŞ)';
+megaMenuRaw.Responsive[2].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='ERKEK ÇOCUK (5-14 YAŞ)';
+
+_uiTranslates.outlet_ChildMenuAgeDesc = '( 5-14 Yaş )';
+
+megaMenuRaw.Responsive[3].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='ERKEK BEBEK (0-6 YAŞ)';
+megaMenuRaw.Responsive[3].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='KIZ BEBEK (0-6 YAŞ)';
+
+_uiTranslates.outlet_BabyMenuAgeDesc  = '( 0-6 Yaş )';
+
+}
+
+/////////////////// Variant 3 Bebek 0-5 Yaş / Çocuk 5-14 Yaş
+
+if (document.readyState == "loading")
+{
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+      
+///////////////////// 3. varyasyon Desktop
+
+megaMenuRaw.Desktop[2].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='KIZ ÇOCUK (5-14 YAŞ)';
+megaMenuRaw.Desktop[2].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='ERKEK ÇOCUK (5-14 YAŞ)';
+
+
+
+/////////////////////////////// Mobile
+
+megaMenuRaw.Responsive[2].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='KIZ ÇOCUK (5-14 YAŞ)';
+megaMenuRaw.Responsive[2].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='ERKEK ÇOCUK (5-14 YAŞ)';
+_uiTranslates.outlet_ChildMenuAgeDesc = '( 5-14 Yaş )';
+    }
+    );
+} else
+{
+
+
+ 
+///////////////////// 3. varyasyon Desktop
+
+megaMenuRaw.Desktop[2].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='KIZ ÇOCUK (5-14 YAŞ)';
+megaMenuRaw.Desktop[2].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='ERKEK ÇOCUK (5-14 YAŞ)';
+
+
+
+/////////////////////////////// Mobile
+
+megaMenuRaw.Responsive[2].ZoneMenuItems[0].SubZoneList[0].ZoneTitleName ='KIZ ÇOCUK (5-14 YAŞ)';
+megaMenuRaw.Responsive[2].ZoneMenuItems[0].SubZoneList[1].ZoneTitleName ='ERKEK ÇOCUK (5-14 YAŞ)';
+_uiTranslates.outlet_ChildMenuAgeDesc = '( 5-14 Yaş )';
+}
