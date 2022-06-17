@@ -1,0 +1,50 @@
+function fillWebsitePlaceFiller(params) {
+    function move(arr, old_index, new_index) {
+        if (new_index >= arr.length) {
+            var k = new_index - arr.length + 1;
+            while (k--) {
+                arr.push(undefined);
+            }
+        }
+        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+        return arr; 
+    };
+    
+    
+    megaMenuRaw.Responsive[4].ZoneMenuItems[0].SubZoneList.forEach((element,index) => {
+        if(element.ZoneTitleName == 'KIZ ÇOCUK'){
+            
+            move(megaMenuRaw.Responsive[4].ZoneMenuItems[0].SubZoneList, index, 5);
+        }
+        if(element.ZoneTitleName == 'ERKEK ÇOCUK'){
+          
+            move(megaMenuRaw.Responsive[4].ZoneMenuItems[0].SubZoneList, index, 6);
+        }
+        if(element.ZoneTitleName == 'KIZ BEBEK'){
+            
+            move(megaMenuRaw.Responsive[4].ZoneMenuItems[0].SubZoneList, index, 7);
+        }
+        if(element.ZoneTitleName == 'ERKEK BEBEK'){
+            
+            move(megaMenuRaw.Responsive[4].ZoneMenuItems[0].SubZoneList, index, 8);
+        }
+     });
+      megaMenuRaw.Desktop[4].ZoneMenuItems[0].SubZoneList.forEach((element,index) => {
+        if(element.ZoneTitleName == 'ÇOCUK'){
+            
+            move( megaMenuRaw.Desktop[4].ZoneMenuItems[0].SubZoneList, index, 1);
+        }
+        if(element.ZoneTitleName == 'BEBEK'){
+            
+            move( megaMenuRaw.Desktop[4].ZoneMenuItems[0].SubZoneList, index, 2);
+        }
+     });
+ }
+
+ ready();
+function ready() {
+  if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded", fillWebsitePlaceFiller);
+  } else {
+    fillWebsitePlaceFiller();
+  }}
