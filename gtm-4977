@@ -1,0 +1,24 @@
+function benzer(params) {
+  if (!!!document.querySelector(".field-validation-error") && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('4977')) {
+    dataLayer.push({'event': 'optimize.activate4977', "4977": "true"});
+  dom_observer.disconnect();
+  }
+}
+
+
+var dom_observer = new MutationObserver(function (mutation) {
+  if(!!document.querySelector("#stockInfoEvamSend") && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('4977')){
+    document.querySelector("#stockInfoEvamSend").addEventListener("click", function() {
+      if (!!!document.querySelector(".field-validation-error")) {
+        setTimeout(function() {
+          console.log('btn-click');
+          benzer();
+        }, 0.2);
+      }
+    })
+      }
+})
+var container = document.body
+var configs = {subtree: true,attributes: false, childList: true, characterData: false}
+dom_observer.observe(container, configs)
+
