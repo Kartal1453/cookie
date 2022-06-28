@@ -1,0 +1,3 @@
+window.onload=function(){dom_observer.disconnect()};
+var dom_observer=new MutationObserver(function(b){document.querySelector(".cart-item")&&document.querySelectorAll(".cart-item").forEach(function(a){a.querySelector("img").srcset.toLocaleUpperCase().includes(productCode)&&!google_tag_manager["GTM-P7BHVG"].dataLayer.get("484")&&(dataLayer.push({event:"optimize.activate484",484:"true"}),dom_observer.disconnect())})}),container=document.body,configs={subtree:!0,attributes:!1,childList:!0,characterData:!1};
+dom_observer.observe(container,configs);
