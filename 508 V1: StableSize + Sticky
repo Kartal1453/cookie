@@ -1,0 +1,266 @@
+var css = `
+.add-to-cart:link {
+padding-top: 0 !important;
+}
+.row.info-panel.ab-test-no-top-padding {
+    padding-top: 0 !important;
+}
+
+.row.info-panel.ab-test-no-bottom-padding {
+    padding-bottom: 0 !important;
+}
+.size-test-copy-div > .size-area {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+    background-color: white;
+}
+
+#test-option-size {
+    display: flex;
+    width: auto;
+    white-space: nowrap;
+    padding-bottom: 15px;
+    overflow: scroll;
+}
+
+.sizeHeightSelectBox > .col-xs-8 {
+    width: 100% !important;
+}
+
+.product-detail .mobile-size-and-cart-container .add-to-cart-container {
+    margin-bottom: 15px;
+}
+
+
+.size-pop-up {
+    display: none;
+}
+a.button-link.mobile-size-button {
+    display: none !important;
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    20% { opacity: 0; }
+    40% { opacity: 0.3; }
+    60% { opacity: 0.5; }
+    80% { opacity: 0.9; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    20% { opacity: 0; }
+    40% { opacity: 0.3; }
+    60% { opacity: 0.5; }
+    80% { opacity: 0.9; }
+    100% { opacity: 1; }
+  }
+
+
+  @-webkit-keyframes fadeOut {
+    0% { opacity: 1; }
+    20% { opacity: 0.9; }
+    40% { opacity: 0.5; }
+    60% { opacity: 0.3; }
+    80% { opacity: 0.0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    20% { opacity: 0.9; }
+    40% { opacity: 0.5; }
+    60% { opacity: 0.3; }
+    80% { opacity: 0.0; }
+    100% { opacity: 0; }
+  }
+
+.ab-test-508-animate-active {
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+
+}
+.ab-test-508-animate-not-active {
+    -webkit-animation-name: ;fadeOut
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+  }
+  #option-size {
+    display: block !important;
+    white-space: nowrap;
+    overflow-y: scroll;
+    padding-bottom: 16px;
+}
+.mobile-bg-shadow.visible-xs {
+    display: none !important;
+}
+
+.buttons-area > .col-xs-12 > div > button#ExploreYourBodyBtn {
+    display: none !important;
+}
+@media only screen and (max-width: 990px){
+    .col-xs-12 > .exploreBodyContainer.MobileButton {
+        display: none !important;
+    }
+}
+
+`
+
+var style = document.createElement("style")
+style.appendChild(document.createTextNode(css))
+document.head.appendChild(style)
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect()
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    )
+}
+function addToCartSection() {
+    document
+        .querySelector(".info-panel-content.colors-panel > .colors-area")
+        .insertAdjacentElement("afterend", document.querySelector(".size-area.main-size-area"))
+    function workOnClassAdd() {
+        if (!isInViewport(document.querySelector("#option-size"))) {
+            $("html, body").animate({
+                scrollTop:
+                    document
+                        .querySelector(".option-sizes.size-area.ucOptionSizeSelector.mt-0.mb-0")
+                        .getBoundingClientRect().top +
+                    window.scrollY -
+                    20,
+            })
+        }
+    }
+
+    class ClassWatcher {
+        constructor(targetNode, classToWatch, classAddedCallback) {
+            this.targetNode = targetNode
+            this.classToWatch = classToWatch
+            this.classAddedCallback = classAddedCallback
+            this.observer = null
+            this.lastClassState = targetNode.classList.contains(this.classToWatch)
+
+            this.init()
+        }
+
+        init() {
+            this.observer = new MutationObserver(this.mutationCallback)
+            this.observe()
+        }
+
+        observe() {
+            this.observer.observe(this.targetNode, {attributes: true})
+        }
+
+        disconnect() {
+            this.observer.disconnect()
+        }
+
+        mutationCallback = (mutationsList) => {
+            for (let mutation of mutationsList) {
+                if (mutation.type === "attributes" && mutation.attributeName === "class") {
+                    let currentClassState = mutation.target.classList.contains(this.classToWatch)
+                    if (this.lastClassState !== currentClassState) {
+                        this.lastClassState = currentClassState
+                        if (currentClassState) {
+                            this.classAddedCallback()
+                        } else {
+                        }
+                    }
+                }
+            }
+        }
+    }
+    let classWatcher = new ClassWatcher(
+        document.querySelector("#pd_add_to_cart"),
+        "selectSizeHeightAlert",
+        workOnClassAdd
+    )
+    var dom_observer = new MutationObserver(function (mutation) {
+        if (
+            document.querySelector(".evam-first-screen-mobileControl.evam-first-screen-click.evam-first-screen-mobile")
+        ) {
+            document
+                .querySelector(".evam-first-screen-mobileControl.evam-first-screen-click.evam-first-screen-mobile")
+                .click()
+        }
+        if (
+            !document.querySelector(
+                ".evam-first-screen-mobileControl.evam-first-screen-click.evam-first-screen-mobile"
+            ) &&
+            !document.querySelector(".exploreBodyContainer-bg.showTool")
+        ) {
+            if (
+                document.querySelector(".exploreBodyContainer.MobileButton") &&
+                document.querySelector(".exploreBodyContainer")
+            ) {
+                document.querySelector(".exploreBodyContainer.MobileButton").style.display = "none !important"
+                document
+                    .querySelector(".info-panel-content.colors-panel > .colors-area")
+                    .nextElementSibling.insertAdjacentElement(
+                        "beforeend",
+                        document.querySelector(".exploreBodyContainer")
+                    )
+                if (document.querySelector(".size-pop-up.hidden-mobile")) {
+                    document.querySelector(".size-pop-up.hidden-mobile").classList.remove("hidden-mobile")
+                }
+                var css1 = `
+                @media only screen and (max-width: 990px){
+                .exploreBodyContainer {
+                    display: block!important;
+                    margin: 10px 0!important;
+                }
+                }
+
+                `
+                var style1 = document.createElement("style")
+                style1.appendChild(document.createTextNode(css1))
+                document.head.appendChild(style1)
+                dom_observer.disconnect()
+            } else {
+                if (document.querySelector(".size-pop-up.hidden-mobile")) {
+                    document.querySelector(".size-pop-up.hidden-mobile").classList.remove("hidden-mobile")
+                }
+                var css1 = `
+                @media only screen and (max-width: 990px){
+                .exploreBodyContainer {
+                    display: block!important;
+                    margin: 10px 0!important;
+                }
+                }
+
+                `
+                var style1 = document.createElement("style")
+                style1.appendChild(document.createTextNode(css1))
+                document.head.appendChild(style1)
+                dom_observer.disconnect()
+            }
+        }
+    })
+    var container = document.body
+    var configs = {attributes: false, childList: true, characterData: true, subtree: true}
+    dom_observer.observe(container, configs)
+    document.querySelectorAll(".modal-content.modal-stock-info-evam > .dismiss-icon").forEach((element) => {
+        element.addEventListener("click", function name(params) {
+            if (document.querySelector(".mobile-bg-shadow.visible-xs")) {
+                document.querySelector(".mobile-bg-shadow.visible-xs").classList.remove("mobile-bg-shadow")
+            }
+        })
+    })
+}
+
+if (document.readyState == "loading") {
+    window.addEventListener("load", function () {
+        addToCartSection()
+    })
+} else {
+    addToCartSection()
+}
