@@ -1,0 +1,392 @@
+var css = `
+.add-to-cart:link {
+padding-top: 0 !important;
+}
+
+.size-test-copy-div > .size-area {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+    background-color: white;
+}
+
+
+#test-option-size {
+    display: flex;
+    width: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    overflow: scroll;
+}
+
+.interaction-buttons.mobile > .pr-5 {
+    display: none !important;
+}
+.interaction-buttons.mobile > .pl-5 {
+    padding-left: 15px !important;
+    width: 100% !important;
+
+}
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    20% { opacity: 0; }
+    40% { opacity: 0.3; }
+    60% { opacity: 0.5; }
+    80% { opacity: 0.9; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    20% { opacity: 0; }
+    40% { opacity: 0.3; }
+    60% { opacity: 0.5; }
+    80% { opacity: 0.9; }
+    100% { opacity: 1; }
+  }
+
+  @-webkit-keyframes fadeOut {
+    0% { opacity: 1; }
+    20% { opacity: 0.9; }
+    40% { opacity: 0.5; }
+    60% { opacity: 0.3; }
+    80% { opacity: 0.0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    20% { opacity: 0.9; }
+    40% { opacity: 0.5; }
+    60% { opacity: 0.3; }
+    80% { opacity: 0.0; }
+    100% { opacity: 0; }
+  }
+
+.ab-test-508-animate-active {
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+.ab-test-508-animate-not-active {
+    -webkit-animation-name: ;fadeOut
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+  }
+
+
+a.interaction-button.interaction-like.add-to-favorite-detail {
+    display: none !important;
+}
+
+a.interaction-button.interaction-share:before {
+   top: 7px !important;
+   margin-right: 2px !important;
+
+}
+
+a.interaction-button.interaction-share {
+    position: absolute !important;
+    top: -83px !important;
+    right: 22px !important;
+    background-color: #ffffff9e !important;
+    border-radius: 50% !important;
+    height: 40px !important;
+    width: 40px !important;
+    border: none !important;
+}
+.interaction-button.interaction-share > span {
+    display: none !important;
+}
+
+.test-favorite-icon:before {
+    content: "";
+    background: url("/Resource/Images/heart.svg") no-repeat center;
+    background-size: 23px 19px !important;
+    background-color: #ffffff2e;
+    width: 53px;
+    height: 50px;
+    display: inline-block;
+    position: relative;
+    border-radius: 2px;
+}
+.test-favorite-icon.added:before {
+    background: url("/Resource/Images/heart-blue.svg") no-repeat center;
+}
+
+
+.mobile-bg-shadow.visible-xs {
+    display: none !important;
+}
+
+
+.test-favorite-icon {
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.17);
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.17);
+    -webkit-appearance: none;
+    width: min-content;
+    display: flex;
+    border-radius: 2px;
+}
+.row.info-panel.ab-test-no-top-padding {
+    padding-top: 0 !important;
+}
+
+.row.info-panel.ab-test-no-bottom-padding {
+    padding-bottom: 0 !important;
+}
+#test-add-to-cart,#test-stock-button {
+    max-width: 500px;
+    margin-right: 11px;
+    font-size: 16px !important;
+}
+
+a.interaction-button.interaction-like.add-to-favorite-detail {
+    display: none !important;
+}
+
+.sizeHeightSelectBox > .col-xs-8 {
+    width: 100% !important;
+}
+
+.size-pop-up {
+    display: none;
+}
+a.button-link.mobile-size-button {
+    display: none !important;
+}
+
+
+#pd_add_to_cart, #stockInfo {
+    margin-right: 11px;
+}
+.sizeHeightSelectBox > .col-xs-8 {
+    display : flex;
+}
+.product-detail .mobile-size-and-cart-container .add-to-cart-container {
+    margin-bottom: 15px;
+}
+
+.sizeHeightSelectBox.col-md-12 {
+    display: flex;
+    width: 100%;
+
+}
+
+
+.buttons-area > .col-xs-12 > div > button#ExploreYourBodyBtn {
+    display: none !important;
+}
+
+@media only screen and (max-width: 990px){
+    .col-xs-12 > .exploreBodyContainer.MobileButton {
+        display: none !important;
+    }
+}
+`
+
+var style = document.createElement("style")
+style.appendChild(document.createTextNode(css))
+document.head.appendChild(style)
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect()
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    )
+}
+function addToCartSection() {
+    document
+        .querySelector(".info-panel-content.colors-panel > .colors-area")
+        .insertAdjacentElement("afterend", document.querySelector(".size-area.main-size-area"))
+    function workOnClassAdd() {
+        if (!isInViewport(document.querySelector("#option-size"))) {
+
+            $("html, body").animate({
+                scrollTop:
+                    document
+                        .querySelector(".option-sizes.size-area.ucOptionSizeSelector.mt-0.mb-0")
+                        .getBoundingClientRect().top +
+                    window.scrollY -
+                    20,
+            })
+        }
+    }
+    class ClassWatcher {
+        constructor(targetNode, classToWatch, classAddedCallback) {
+            this.targetNode = targetNode
+            this.classToWatch = classToWatch
+            this.classAddedCallback = classAddedCallback
+            this.observer = null
+            this.lastClassState = targetNode.classList.contains(this.classToWatch)
+
+            this.init()
+        }
+
+        init() {
+            this.observer = new MutationObserver(this.mutationCallback)
+            this.observe()
+        }
+
+        observe() {
+            this.observer.observe(this.targetNode, {attributes: true})
+        }
+
+        disconnect() {
+            this.observer.disconnect()
+        }
+
+        mutationCallback = (mutationsList) => {
+            for (let mutation of mutationsList) {
+                if (mutation.type === "attributes" && mutation.attributeName === "class") {
+                    let currentClassState = mutation.target.classList.contains(this.classToWatch)
+                    if (this.lastClassState !== currentClassState) {
+                        this.lastClassState = currentClassState
+                        if (currentClassState) {
+                            this.classAddedCallback()
+                        } else {
+                        }
+                    }
+                }
+            }
+        }
+    }
+    let classWatcher = new ClassWatcher(
+        document.querySelector("#pd_add_to_cart"),
+        "selectSizeHeightAlert",
+        workOnClassAdd
+    )
+    var dom_observer = new MutationObserver(function (mutation) {
+        if (
+            document.querySelector(".evam-first-screen-mobileControl.evam-first-screen-click.evam-first-screen-mobile")
+        ) {
+            document
+                .querySelector(".evam-first-screen-mobileControl.evam-first-screen-click.evam-first-screen-mobile")
+                .click()
+        }
+        if (
+            !document.querySelector(
+                ".evam-first-screen-mobileControl.evam-first-screen-click.evam-first-screen-mobile"
+            ) &&
+            !document.querySelector(".exploreBodyContainer-bg.showTool")
+        ) {
+            if (document.querySelector(".exploreBodyContainer.MobileButton") && document.querySelector(".exploreBodyContainer")) {
+                document
+                    .querySelector(".info-panel-content.colors-panel > .colors-area")
+                    .nextElementSibling.insertAdjacentElement(
+                        "beforeend",
+                        document.querySelector(".exploreBodyContainer")
+                    )
+                if (document.querySelector(".size-pop-up.hidden-mobile")) {
+                    document.querySelector(".size-pop-up.hidden-mobile").classList.remove("hidden-mobile")
+                }
+                var css1 = `
+                @media only screen and (max-width: 990px){
+                .exploreBodyContainer {
+                    display: block!important;
+                    margin: 10px 0!important;
+                }
+                }
+
+                `
+                var style1 = document.createElement("style")
+                style1.appendChild(document.createTextNode(css1))
+                document.head.appendChild(style1)
+                dom_observer.disconnect()
+            } else {
+                if (document.querySelector(".size-pop-up.hidden-mobile")) {
+                    document.querySelector(".size-pop-up.hidden-mobile").classList.remove("hidden-mobile")
+                }
+                var css1 = `
+                @media only screen and (max-width: 990px){
+                .exploreBodyContainer {
+                    display: block!important;
+                    margin: 10px 0!important;
+                }
+                }
+
+                `
+                var style1 = document.createElement("style")
+                style1.appendChild(document.createTextNode(css1))
+                document.head.appendChild(style1)
+                dom_observer.disconnect()
+            }
+        }
+    })
+    var container = document.body
+    var configs = {attributes: false, childList: true, characterData: true, subtree: true}
+    dom_observer.observe(container, configs)
+
+    if (
+        document
+            .querySelector("a.interaction-button.interaction-like.add-to-favorite-detail")
+            .classList.contains("added")
+    ) {
+        document.querySelector(".test-favorite-icon").classList.add("added")
+    }
+
+    document.querySelector(".test-favorite-icon").addEventListener("click", function () {
+        document.querySelectorAll("a.interaction-button.interaction-like.add-to-favorite-detail")[1].click()
+        if (document.querySelector(".test-favorite-icon").classList.contains("added")) {
+            document.querySelector(".test-favorite-icon").classList.remove("added")
+        } else {
+            document.querySelector(".test-favorite-icon").classList.add("added")
+        }
+    })
+
+
+    document.querySelectorAll(".modal-content.modal-stock-info-evam > .dismiss-icon").forEach((element) => {
+        element.addEventListener("click", function name(params) {
+            if (document.querySelector(".mobile-bg-shadow.visible-xs")) {
+                document.querySelector(".mobile-bg-shadow.visible-xs").classList.remove("mobile-bg-shadow")
+            }
+        })
+    })
+}
+if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+        const node = document.querySelector("#stockInfo").parentElement
+        node.replaceWith(...node.childNodes)
+        const node1 = document.querySelector("#pd_add_to_cart").parentElement
+        node1.replaceWith(...node1.childNodes)
+        document.querySelector("#pd_add_to_cart").parentElement.classList.add("col-md-12")
+
+        document.querySelector("#pd_add_to_cart").insertAdjacentHTML(
+            "afterend",
+            `
+        <div class="test-favorite-icon">
+
+        </div>`
+        )
+        document
+            .querySelector(`.info-panel-content.main-info-area`)
+            .insertAdjacentElement(`afterbegin`, document.querySelector(`.row.interaction-buttons.mobile`))
+    })
+    window.addEventListener("load", function () {
+        addToCartSection()
+    })
+} else {
+    const node = document.querySelector("#stockInfo").parentElement
+    node.replaceWith(...node.childNodes)
+    const node1 = document.querySelector("#pd_add_to_cart").parentElement
+    node1.replaceWith(...node1.childNodes)
+    document.querySelector("#pd_add_to_cart").parentElement.classList.add("col-md-12")
+    document.querySelector("#pd_add_to_cart").insertAdjacentHTML(
+        "afterend",
+        `
+    <div class="test-favorite-icon">
+
+    </div>`
+    )
+    document
+        .querySelector(`.info-panel-content.main-info-area`)
+        .insertAdjacentElement(`afterbegin`, document.querySelector(`.row.interaction-buttons.mobile`))
+
+    addToCartSection()
+}
