@@ -1,0 +1,33 @@
+<script>
+ function mut(params) {
+if(!!document.querySelector("title") && !!!document.querySelector(".optimize-519")){
+   document.querySelector("title").classList.add("optimize-519");
+  var siparisNo = document.title.replace(/[^0-9]/g,'')
+  fetch("https://www.lcwaikiki.com/tr-TR/TR/siparis-detay/"+siparisNo)
+              .then(function (response)
+              {
+                  return response.text();
+              })
+              .then(function (html)
+              {
+                  var parser = new DOMParser();
+                  var dom = parser.parseFromString(html, "text/html");
+                  fetchResponse = dom.querySelector("#DetailShipping_SelectedCityName"); 
+                  if((fetchResponse.innerText.toLowerCase().includes("izmir") || fetchResponse.innerText.toLowerCase().includes("bursa") || fetchResponse.innerText.toLowerCase().includes("antalya") || fetchResponse.innerText.toLowerCase().includes("konya") || fetchResponse.innerText.toLowerCase().includes("kocaeli") || fetchResponse.innerText.toLowerCase().includes("erzurum")) && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('519') )
+                  {dataLayer.push({'event': 'optimize.activate519', "519": "true"})}
+
+              })
+              .catch(function (err)
+              {
+                  console.warn("Something went wrong.", err);
+              });
+}
+
+}
+  mut();
+   if (document.readyState == "loading") {
+     document.addEventListener("DOMContentLoaded", mut);
+   } else {
+     mut();
+   }
+</script> 
