@@ -1,0 +1,48 @@
+<script>
+    function city(params) {
+    if (!!document.querySelector(".customerAddressFormView") && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('4788')) {
+      dataLayer.push({'event': 'optimize.activate4788', "4788": "true"});
+    }
+     if (!!document.querySelector(".customerAddressFormView") && !!document.querySelector(".deliveryMethodDetail") &&!!!document.querySelector(".deliveryMethodDetail").querySelector(".addressContainer") && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('47888')) {
+       dataLayer.push({'event': 'optimize.activate4788', "47888": "true"});
+     dataLayer.push({
+         Category: "CheckOut",
+         Action: "Load",
+         Label: "DontHaveAdress",
+         event: "gaEvent",
+       });
+    }
+    if (!!document.querySelector(".addCustomerStoreAddressModalView") && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('4788')) {
+        dataLayer.push({'event': 'optimize.activate4788', "4788": "true"});
+      }
+          if (!!document.querySelector(".addCustomerStoreAddressModalView") &&!!!document.querySelector(".deliveryMethodDetail").querySelector(".addressContainer") && !google_tag_manager['GTM-P7BHVG'].dataLayer.get('478888')) {
+     dataLayer.push({'event': 'optimize.activate4788', "478888": "true"});
+     dataLayer.push({
+         Category: "CheckOut",
+         Action: "Load",
+         Label: "DontHaveMagazaAdress",
+         event: "gaEvent",
+       });
+    }
+  }
+  
+  
+  var dom_observer = new MutationObserver(function (mutation) {
+    if((!!document.querySelector(".customerAddressFormView")|!!document.querySelector(".addCustomerStoreAddressModalView") )){
+      if (!!document.querySelector(".customerAddressFormView")) {
+        document.querySelector(".customerAddressFormView").querySelector("#CityInput").addEventListener("click", function() {
+            city();
+        })
+      }
+      if (!!document.querySelector(".addCustomerStoreAddressModalView")) {
+        document.querySelector(".addCustomerStoreAddressModalView").querySelector(".v-select.vs--single.vs--searchable").addEventListener("click", function() {
+            city();
+        })  
+      }
+        }
+  })
+  var container = document.body
+  var configs = {subtree: true,attributes: false, childList: true, characterData: false}
+  dom_observer.observe(container, configs)
+
+ </script>
