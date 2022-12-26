@@ -1,0 +1,107 @@
+<script> 
+ if (document.readyState == "loading")
+{
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+        var tempClick = 0;
+        document.querySelectorAll("#option-size > a ").forEach(function (element, index)
+        {
+            if (element.classList.contains("selected") || element.classList.contains("disableSelected"))
+            {
+                tempClick = 1;
+            }
+        });
+        if (tempClick && document.querySelector("#option-height"))
+        {
+            abTest518Observer();
+            return;
+        } else
+        {
+            if (document.querySelector("#option-height"))
+            {
+                dataLayer.push({
+                    event: "optimize.activate518",
+                    518: "true",
+                });
+            }
+        }
+
+
+
+    });
+} else
+{
+    var ab = function abtemp()
+    {
+        var tempClick = 0;
+        document.querySelectorAll("#option-size > a ").forEach(function (element, index)
+        {
+            if (element.classList.contains("selected") || element.classList.contains("disableSelected"))
+            {
+                tempClick = 1;
+            }
+        });
+        if (tempClick && document.querySelector("#option-height"))
+        {
+            abTest518Observer();
+            return;
+        } else
+        {
+            if (document.querySelector("#option-height"))
+            {
+                dataLayer.push({
+                    event: "optimize.activate518",
+                    518: "true",
+                });
+            }
+        }
+
+
+    };
+    ab();
+}
+
+var count = 0;
+var newCount = 0;
+var countStock = 0;
+var newCountStock = 0;
+function abTest518Observer()
+{
+    var dom_observer = new MutationObserver(function (mutation)
+    {
+        newCount = performance.getEntriesByName("https://www.lcwaikiki.com/tr-TR/TR/ajax/Shop/GetShoppingCart").length;
+        newCountStock = performance.getEntriesByName("https://www.lcwaikiki.com/tr-TR/TR/ajax/Model/SendStockInfoEvam").length;
+        if (count != newCount || countStock != newCountStock)
+        {
+            count = newCount;
+            countStock = newCountStock;
+            var clicked = 0;
+            document.querySelectorAll(".mobile-size-and-cart-container #option-size > a ").forEach(function(element, index)
+            {
+                if (element.classList.contains("selected") || element.classList.contains("disableSelected"))
+                {
+                    clicked = 1;
+                }
+            });
+            if (!clicked)
+            {
+                dataLayer.push({
+                    event: "optimize.activate518",
+                    518: "true",
+                });
+                dom_observer.disconnect();
+            }
+        }
+    });
+    var container = document.querySelector("#option-height");
+    var configs = { attributes: true, childList: true, characterData: false, subtree: true };
+    dom_observer.observe(container, configs);
+}
+
+
+
+
+  
+  
+  
+</script>
